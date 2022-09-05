@@ -1,0 +1,154 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+#navbar1{
+    height: 80px;
+   
+    display: flex;
+    justify-content:space-around;
+     
+    color:whitesmoke;
+}
+#rightpart{
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    font-size: large;
+}
+#leftpart>img{
+    width: 12%;
+    height: 60%;
+    margin-top: 15px;
+ 
+}
+#leftpart{
+    display: flex;
+     gap: 30px;
+
+    
+}
+#rightpart>a{
+    color:rgb(2, 2, 31);
+    font-size: 18px;
+    text-decoration: none;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#leftpart>h4{
+    margin-top:30px;
+   color: black ;
+}
+
+#navbar2{
+    height: 80px;
+  
+    display: flex;
+    justify-content:space-around;
+     margin-top: 20px;
+    color:whitesmoke;
+}
+#rightofnav2{
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    font-size: large;
+}
+#leftofnav2>img{
+    width: 12%;
+    height: 60%;
+    margin-top: 15px;
+ 
+}
+ 
+#rightofnav2>a{
+    color:rgb(2, 2, 31);
+    font-size: 18px;
+    text-decoration: none;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#leftofnav2>h1{
+    margin-top:25px;
+    color: black;
+
+}
+
+#card{
+display: flex;
+justify-content: center;
+gap: 50px;
+height:330px;
+background-color:rgb(2, 2, 31);
+
+}
+#card>div{
+    margin-top: 40px;
+    margin-bottom: 30px;
+  
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+}
+#card>div>img{
+    width: 100%;
+    height: 100%;
+}
+
+#itemsdetails{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+   
+    width: 90%;
+    margin:auto;
+     
+    margin-top: 40px;
+    margin-bottom: 30px;
+     
+}
+
+#itemsdetails>div>div>img{
+    width:100%;
+    
+}
+#itemsdetails>div{
+    padding: 10px;
+     width: 90%;
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#rating_and_price{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+#parentofcart{
+    text-align: center;
+}
+#Addtocart{
+    background-color:rgb(2, 2, 31);
+    color: white;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+#ratingg{
+    background-color: rgb(192, 126, 5);
+    padding: 5px 8px 5px 5px;
+    color: white;
+    font-size: small;
+}
+ 
+#discount{
+    color:rgb(99, 72, 22);
+}
+#itemcontent{
+    margin-top: 10px;
+}
+ #card>div>img:hover{
+    transform: scale(1.1);
+ }
+ #productname{
+    margin-top: 5px;
+ }
+
