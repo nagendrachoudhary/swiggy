@@ -113,7 +113,10 @@ var arr=[
   
     document.getElementById("search").append("  ","Search");
     document.getElementById("navcart").append("  ","Cart");
-  
+
+  display();
+    function display(){
+      document.getElementById("itemsdetails").innerText="";
     arr.map(function(ele,index)
     {
       var div=document.createElement("div");
@@ -130,7 +133,7 @@ var arr=[
       name.innerText=ele.itemName;
   
       var itemtag=document.createElement("p");
-      itemtag.setAttribute("id","itemtag")
+      itemtag.setAttribute("id","itemtag");
       itemtag.innerText=ele.itemTag;
   
       div1.append(name,itemtag);
@@ -171,7 +174,7 @@ var arr=[
       i1.setAttribute("class","fa-solid fa-percent")
       
       var temp=document.createElement("p");
-      temp.innerText="off | "
+      temp.innerText="off | ";
 
       var coupon=document.createElement("p");
       coupon.innerText=ele.itemCoupon_code;
@@ -179,9 +182,9 @@ var arr=[
       div3.append(discount,i1,temp,coupon);
 
       var div4=document.createElement("div");
-      div4.setAttribute("id","parentofcart")
+      div4.setAttribute("id","parentofcart");
       var cart=document.createElement("button");
-      cart.setAttribute("class","Addtocart")
+      cart.setAttribute("class","Addtocart");
       
       cart.innerText="Add to Cart";
       cart.addEventListener("click",function()
@@ -196,6 +199,7 @@ var arr=[
 
 
   });
+}
 
      
     
