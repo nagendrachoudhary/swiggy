@@ -158,7 +158,7 @@ background-color:rgb(2, 2, 31);
     text-align: center;
      
 }
-#Addtocart{
+.Addtocart{
     background-color:rgb(2, 2, 31);
     color: white;
     border-radius: 5px;
@@ -166,7 +166,7 @@ background-color:rgb(2, 2, 31);
     padding: 8px;
     margin-bottom: 10px;
 }
-#Addtocart:hover{
+.Addtocart:hover{
   cursor: pointer;
   transform:scale(1.1);
 }
@@ -195,9 +195,15 @@ background-color:rgb(2, 2, 31);
     display: flex;
     gap:6px;
     justify-content:start;
-    border:1px solid crimson;
+    color: rgb(36, 59, 102);
+    font-weight: bold;
+    font-size: 17px;
 }
 #discount{
     font-size: 17px;
-    margin-top: -3px;
+    
 }
+#price{
+    font-size: 17px;
+}
+ 

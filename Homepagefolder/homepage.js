@@ -13,7 +13,7 @@ var arr=[
     {
       itemName: "Manohar Dairy and Restaurant",
       itemTag:"Sweets",
-      itemRating:" 4.3",
+      itemRating:"4.3",
       itemPrice:"300",
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/v6elbsatlbi93xeq0g3c",
@@ -22,7 +22,7 @@ var arr=[
     {
       itemName: "Anjani Bhojnalay",
       itemTag:"North Indian",
-      itemRating:" 4.8",
+      itemRating:"4.8",
       itemPrice:"200",
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/u7hwixd7b4papoe2hwdu",
@@ -40,7 +40,7 @@ var arr=[
     {
       itemName: "Biryani By Kilo",
       itemTag:"Biryani",
-      itemRating:" 4.3",
+      itemRating:"3.3",
       itemPrice:"350",
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/qjlxj9scdfjn6jlytt1x",
@@ -56,35 +56,35 @@ var arr=[
       itemCoupon_code:"USETRY30",
     },
     {
+      itemName: "Rice Bowl Thai & Chinese",
+      itemTag:"chinese",
+      itemRating:"2.3",
+      itemPrice:"200",
+      itemDiscount:"30",
+      itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/tcg9zzpjyaopkhmdxgus",
+      itemCoupon_code:"USETRY30",
+    },
+    {
       itemName: "6 Veg Cheese Pizza",
-      itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
-      itemRating:" 2.3",
+      itemTag:"pizzas",
+      itemRating:"4.9",
       itemPrice:"200",
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
       itemCoupon_code:"USETRY30",
     },
     {
-      itemName: "6 Veg Cheese Pizza",
-      itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
-      itemRating:" 4.9",
+      itemName:"Sagar Gaire - Kolar",
+      itemTag:"cheese.",
+      itemRating:"4.0",
       itemPrice:"200",
       itemDiscount:"30",
-      itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
-      itemCoupon_code:"USETRY30",
-    },
-    {
-      itemName: "6 Veg Cheese Pizza",
-      itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
-      itemRating:" 4.0",
-      itemPrice:"200",
-      itemDiscount:"30",
-      itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
+      itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/cxgudmo1mrxz7v9jnjz1",
       itemCoupon_code:"USETRY30",
     }, {
         itemName: "6 Veg Cheese Pizza",
         itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
-        itemRating:" 4.2",
+        itemRating:"4.2",
         itemPrice:"200",
         itemDiscount:"30",
         itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
@@ -93,7 +93,7 @@ var arr=[
       {
         itemName: "6 Veg Cheese Pizza",
         itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
-        itemRating:" 4.1",
+        itemRating:"4.1",
         itemPrice:"200",
         itemDiscount:"30",
         itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
@@ -102,7 +102,7 @@ var arr=[
       {
         itemName: "6 Veg Cheese Pizza",
         itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
-        itemRating:" 4.6",
+        itemRating:"4.6",
         itemPrice:"200",
         itemDiscount:"30",
         itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
@@ -111,7 +111,8 @@ var arr=[
   
     ];
   
-     
+    document.getElementById("search").append("  ","Search");
+    document.getElementById("navcart").append("  ","Cart");
   
     arr.map(function(ele,index)
     {
@@ -139,15 +140,19 @@ var arr=[
       star.setAttribute("class","fa fa-star checked");
   
       var rating=document.createElement("p");
-      rating.append(star);
       rating.setAttribute("id","ratingg");
-      rating.append(ele.itemRating);
+      rating.append(star," ",ele.itemRating);
+       
+       
   
   
+      var i=document.createElement("i");
+      i.setAttribute("class","fa-solid fa-indian-rupee-sign");
   
       var price=document.createElement("p");
-      price.innerText=ele.itemPrice;
-    
+      price.setAttribute("id","price");
+      price.append(i," ",ele.itemPrice);
+      
        
       var div2=document.createElement("div");
       div2.setAttribute("id","rating_and_price");
@@ -173,8 +178,13 @@ var arr=[
       var div4=document.createElement("div");
       div4.setAttribute("id","parentofcart")
       var cart=document.createElement("button");
-      cart.setAttribute("id","Addtocart")
+      cart.setAttribute("class","Addtocart")
+      
       cart.innerText="Add to Cart";
+      cart.addEventListener("click",function()
+    {
+      cartfun(index);
+    });
       div4.append(cart);
   
 
@@ -182,27 +192,28 @@ var arr=[
       document.querySelector("#itemsdetails").append(div);
 
 
-      document.querySelector("#Addtocart").addEventListener("click",function()
-    {
-      cartfun(index);
-    });
+       
 
-    });
+  });
 
      
     
     var addcart=[];
+    
     function cartfun(i)
     {
      var a=arr.filter(function(ele,index)
      {
          return index===i;
      });
-    addcart.push(a[0]);
 
+    addcart.push(a[0]);
+    
     localStorage.setItem("cart",JSON.stringify(addcart));
+    
 
     }
+     
 
 
 
