@@ -110,10 +110,16 @@ var arr=[
       },
   
     ];
-  
+    var addcart=JSON.parse(localStorage.getItem("Cart"))||[];
     document.getElementById("search").append("  ","Search");
     document.getElementById("navcart").append("  ","Cart");
-  
+    var cart_count = document.createElement("span");
+    document.getElementById("navcart").append(" ",cart_count);
+    cart_count.innerText = addcart.length||0;
+    display();
+  function display(){
+
+    document.getElementById("itemsdetails").innerText = "";
     arr.map(function(ele,index)
     {
       var div=document.createElement("div");
@@ -187,7 +193,9 @@ var arr=[
       cart.innerText="Add to Cart";
       cart.addEventListener("click",function()
     {
-      cartfun(index);
+      addcart.push(ele);
+      localStorage.setItem("Cart",JSON.stringify(addcart));
+      cart_count.innerText = addcart.length||0;
     });
       div4.append(cart);
   
@@ -196,28 +204,57 @@ var arr=[
       document.querySelector("#itemsdetails").append(div);
 
 
-       
-
   });
+}
 
-     
-    
-    var addcart=[];
-    
-    function cartfun(i)
+    function rating_sort()
     {
-     var a=arr.filter(function(ele,index)
-     {
-         return index===i;
-     });
-
-    addcart.push(a[0]);
-    
-    localStorage.setItem("cart",JSON.stringify(addcart));
-    
-
+      event.preventDefault();
+      arr.sort(function(a,b){
+        if(a.itemRating>b.itemRating)
+        {
+          return -1;
+        }
+        if(a.itemRating<b.itemRating)
+        {
+          return 1;
+        }
+        return 0;
+      })
+      display();
     }
-     
+    function low_to_high_sort()
+    {
+      event.preventDefault();
+      arr.sort(function(a,b){
+        if(a.itemPrice>b.itemPrice)
+        {
+          return 1;
+        }
+        if(a.itemPrice<b.itemPrice)
+        {
+          return -1;
+        }
+        return 0;
+      })
+      display();
+    }
+    function high_to_low_sort()
+    {
+      event.preventDefault();
+      arr.sort(function(a,b){
+        if(a.itemPrice>b.itemPrice)
+        {
+          return -1;
+        }
+        if(a.itemPrice<b.itemPrice)
+        {
+          return 1;
+        }
+        return 0;
+      })
+      display();
+    }
 
 
 
