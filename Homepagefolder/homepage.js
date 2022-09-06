@@ -215,6 +215,56 @@ var arr=[
 
     }
 
+    
+    function rating_sort()
+    {
+      event.preventDefault();
+      arr.sort(function(a,b){
+        if(a.itemRating>b.itemRating)
+        {
+          return -1;
+        }
+        if(a.itemRating<b.itemRating)
+        {
+          return 1;
+        }
+        return 0;
+      })
+      display();
+    }
+    function low_to_high_sort()
+    {
+      event.preventDefault();
+      arr.sort(function(a,b){
+        if(a.itemPrice>b.itemPrice)
+        {
+          return 1;
+        }
+        if(a.itemPrice<b.itemPrice)
+        {
+          return -1;
+        }
+        return 0;
+      })
+      display();
+    }
+    function high_to_low_sort()
+    {
+      event.preventDefault();
+      arr.sort(function(a,b){
+        if(a.itemPrice>b.itemPrice)
+        {
+          return -1;
+        }
+        if(a.itemPrice<b.itemPrice)
+        {
+          return 1;
+        }
+        return 0;
+      })
+      display();
+    }
+
 
     
      
