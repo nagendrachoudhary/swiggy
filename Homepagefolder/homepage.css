@@ -191,3 +191,13 @@ background-color:rgb(2, 2, 31);
     margin-bottom:5px;
  }
 
+#parentdiscount{
+    display: flex;
+    gap:6px;
+    justify-content:start;
+    border:1px solid crimson;
+}
+#discount{
+    font-size: 17px;
+    margin-top: -3px;
+}
