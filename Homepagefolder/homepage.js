@@ -7,6 +7,8 @@ var arr=[
       itemPrice:"150",
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/jb9iyqwlhuyxyvb6zwnz",
+      itemCoupon_code:"USETRY30",
+
     },
     {
       itemName: "Manohar Dairy and Restaurant",
@@ -15,6 +17,7 @@ var arr=[
       itemPrice:"300",
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/v6elbsatlbi93xeq0g3c",
+      itemCoupon_code:"USETRY30",
     },
     {
       itemName: "Anjani Bhojnalay",
@@ -23,6 +26,7 @@ var arr=[
       itemPrice:"200",
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/u7hwixd7b4papoe2hwdu",
+      itemCoupon_code:"USETRY30",
     },
     {
       itemName: "Burger King",
@@ -31,6 +35,7 @@ var arr=[
       itemPrice:"160",
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/yzdmieopbbypvdfybrur",
+      itemCoupon_code:"USETRY30",
     },
     {
       itemName: "Biryani By Kilo",
@@ -39,68 +44,76 @@ var arr=[
       itemPrice:"350",
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/qjlxj9scdfjn6jlytt1x",
+      itemCoupon_code:"USETRY30",
     },
     {
       itemName: "Idli & More",
       itemTag:"South Indian",
-      itemRating:"5.0",
+      itemRating:"3.0",
       itemPrice:"180",
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/yti6qdbmzawis39mjfni",
+      itemCoupon_code:"USETRY30",
     },
     {
       itemName: "6 Veg Cheese Pizza",
       itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
-      itemRating:" 4.3",
+      itemRating:" 2.3",
       itemPrice:"200",
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
+      itemCoupon_code:"USETRY30",
     },
     {
       itemName: "6 Veg Cheese Pizza",
       itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
-      itemRating:" 4.3",
+      itemRating:" 4.9",
       itemPrice:"200",
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
+      itemCoupon_code:"USETRY30",
     },
     {
       itemName: "6 Veg Cheese Pizza",
       itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
-      itemRating:" 4.3",
+      itemRating:" 4.0",
       itemPrice:"200",
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
+      itemCoupon_code:"USETRY30",
     }, {
         itemName: "6 Veg Cheese Pizza",
         itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
-        itemRating:" 4.3",
+        itemRating:" 4.2",
         itemPrice:"200",
         itemDiscount:"30",
         itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
+        itemCoupon_code:"USETRY30",
       },
       {
         itemName: "6 Veg Cheese Pizza",
         itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
-        itemRating:" 4.3",
+        itemRating:" 4.1",
         itemPrice:"200",
         itemDiscount:"30",
         itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
+        itemCoupon_code:"USETRY30",
       },
       {
         itemName: "6 Veg Cheese Pizza",
         itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
-        itemRating:" 4.3",
+        itemRating:" 4.6",
         itemPrice:"200",
         itemDiscount:"30",
         itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
+        itemCoupon_code:"USETRY30",
       },
   
     ];
   
      
   
-    arr.map(function(ele)
+    arr.map(function(ele,index)
     {
       var div=document.createElement("div");
   
@@ -145,11 +158,17 @@ var arr=[
       var discount=document.createElement("p");
       discount.setAttribute("id","discount");
       discount.innerText=ele.itemDiscount;
-
+     
       var i1=document.createElement("i");
       i1.setAttribute("class","fa-solid fa-percent")
       
-      div3.append(discount,i1);
+      var temp=document.createElement("p");
+      temp.innerText="off | "
+
+      var coupon=document.createElement("p");
+      coupon.innerText=ele.itemCoupon_code;
+
+      div3.append(discount,i1,temp,coupon);
 
       var div4=document.createElement("div");
       div4.setAttribute("id","parentofcart")
@@ -158,6 +177,32 @@ var arr=[
       cart.innerText="Add to Cart";
       div4.append(cart);
   
+
       div.append(imgdiv,div1,div2,div3,div4);
       document.querySelector("#itemsdetails").append(div);
+
+
+      document.querySelector("#Addtocart").addEventListener("click",function()
+    {
+      cartfun(index);
     });
+
+    });
+
+     
+    
+    var addcart=[];
+    function cartfun(i)
+    {
+     var a=arr.filter(function(ele,index)
+     {
+         return index===i;
+     });
+    addcart.push(a[0]);
+
+    localStorage.setItem("cart",JSON.stringify(addcart));
+
+    }
+
+
+
