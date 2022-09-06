@@ -110,13 +110,18 @@ var arr=[
       },
   
     ];
-  
+    
     document.getElementById("search").append("  ","Search");
     document.getElementById("navcart").append("  ","Cart");
+ 
 
   display();
     function display(){
       document.getElementById("itemsdetails").innerText="";
+ 
+    
+   
+ 
     arr.map(function(ele,index)
     {
       var div=document.createElement("div");
@@ -200,10 +205,7 @@ var arr=[
 
   });
 }
-
-     
-    
-    var addcart=[];
+ var addcart=[];
     
     function cartfun(i)
     {
@@ -219,7 +221,6 @@ var arr=[
 
     }
 
-    
     function rating_sort()
     {
       event.preventDefault();
@@ -268,10 +269,15 @@ var arr=[
       })
       display();
     }
+ 
+
+    
+     
 
 
     
      
+ 
 
 
 

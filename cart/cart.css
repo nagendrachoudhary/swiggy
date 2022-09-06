@@ -1,0 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.flex{
+    display: flex;
+    justify-content: space-around;
+}
+#navbar{
+    margin: 20px auto;
+}
+img{
+    width: 10%;
+}
+.flex1{
+    display: flex;
+    align-items: center;
+}
+img+span{
+    margin-left: 2rem;
+}
+#navbar p{
+    margin: auto 50px;
+}
+#address{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+#right{
+    width: 80%;
+    border: 1px solid;
+    text-align: center;
+
+}
+#content{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.qtychange{
+    border: 1px solid black;
+    font-size: 20px;
+    padding: 5px 10px;
+}
+.qtychange>button{
+    border: none;
+    padding: 4px;
+    font-size: 20px;
+    background-color: white;
+    color: lightgreen;
+}
+.qtychange>span{
+    margin: auto 4px;
+}
+#right>div>p{
+    width: 40%;
+}
+#right>div>div{
+    width: 20%;
+    margin: auto 20px;
+}
+#right>div{
+    margin: 5px auto;
+}
+
+
