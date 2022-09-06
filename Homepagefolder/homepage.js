@@ -110,20 +110,21 @@ var arr=[
       },
   
     ];
-    var addcart=JSON.parse(localStorage.getItem("Cart"))||[];
+    
     document.getElementById("search").append("  ","Search");
     document.getElementById("navcart").append("  ","Cart");
-    var cart_count = document.createElement("span");
-    document.getElementById("navcart").append(" ",cart_count);
-    cart_count.innerText = addcart.length||0;
-    display();
-  function display(){
+ 
 
-    document.getElementById("itemsdetails").innerText = "";
+  display();
+    function display(){
+      document.getElementById("itemsdetails").innerText="";
+ 
+    
+   
+ 
     arr.map(function(ele,index)
     {
       var div=document.createElement("div");
-  
       var imgdiv=document.createElement("div");
       var img=document.createElement("img");
       img.setAttribute("src",ele.itemImage);
@@ -137,7 +138,7 @@ var arr=[
       name.innerText=ele.itemName;
   
       var itemtag=document.createElement("p");
-      itemtag.setAttribute("id","itemtag")
+      itemtag.setAttribute("id","itemtag");
       itemtag.innerText=ele.itemTag;
   
       div1.append(name,itemtag);
@@ -178,7 +179,7 @@ var arr=[
       i1.setAttribute("class","fa-solid fa-percent")
       
       var temp=document.createElement("p");
-      temp.innerText="off | "
+      temp.innerText="off | ";
 
       var coupon=document.createElement("p");
       coupon.innerText=ele.itemCoupon_code;
@@ -186,16 +187,14 @@ var arr=[
       div3.append(discount,i1,temp,coupon);
 
       var div4=document.createElement("div");
-      div4.setAttribute("id","parentofcart")
+      div4.setAttribute("id","parentofcart");
       var cart=document.createElement("button");
-      cart.setAttribute("class","Addtocart")
+      cart.setAttribute("class","Addtocart");
       
       cart.innerText="Add to Cart";
       cart.addEventListener("click",function()
     {
-      addcart.push(ele);
-      localStorage.setItem("Cart",JSON.stringify(addcart));
-      cart_count.innerText = addcart.length||0;
+      cartfun(index);
     });
       div4.append(cart);
   
@@ -206,6 +205,21 @@ var arr=[
 
   });
 }
+ var addcart=[];
+    
+    function cartfun(i)
+    {
+     var a=arr.filter(function(ele,index)
+     {
+         return index===i;
+     });
+
+    addcart.push(a[0]);
+    
+    localStorage.setItem("cart",JSON.stringify(addcart));
+    
+
+    }
 
     function rating_sort()
     {
@@ -255,6 +269,15 @@ var arr=[
       })
       display();
     }
+ 
+
+    
+     
+
+
+    
+     
+ 
 
 
 
