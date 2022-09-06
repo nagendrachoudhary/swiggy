@@ -117,7 +117,6 @@ var arr=[
     arr.map(function(ele,index)
     {
       var div=document.createElement("div");
-  
       var imgdiv=document.createElement("div");
       var img=document.createElement("img");
       img.setAttribute("src",ele.itemImage);
@@ -196,8 +195,6 @@ var arr=[
       document.querySelector("#itemsdetails").append(div);
 
 
-       
-
   });
 
      
@@ -217,6 +214,9 @@ var arr=[
     
 
     }
+
+
+    
      
 
 
