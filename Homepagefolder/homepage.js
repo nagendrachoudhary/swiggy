@@ -200,16 +200,16 @@ var arr=[
 
   });
 }
-
+ 
      
     
     var addcart=[];
     
-    function cartfun(i)
+    function cartfun(ind)
     {
      var a=arr.filter(function(ele,index)
      {
-         return index===i;
+         return index===ind;
      });
 
     addcart.push(a[0]);
