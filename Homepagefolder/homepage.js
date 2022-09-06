@@ -169,8 +169,8 @@ var arr=[
       div2.setAttribute("id","rating_and_price");
       div2.append(rating,price);
   
-      var div3=document.createElement("div");
-      div3.setAttribute("id","parentdiscount");
+      var divv3=document.createElement("div");
+      divv3.setAttribute("id","parentdiscount");
       var discount=document.createElement("p");
       discount.setAttribute("id","discount");
       discount.innerText=ele.itemDiscount;
@@ -184,7 +184,7 @@ var arr=[
       var coupon=document.createElement("p");
       coupon.innerText=ele.itemCoupon_code;
 
-      div3.append(discount,i1,temp,coupon);
+      divv3.append(discount,i1,temp,coupon);
 
       var div4=document.createElement("div");
       div4.setAttribute("id","parentofcart");
@@ -199,7 +199,7 @@ var arr=[
       div4.append(cart);
   
 
-      div.append(imgdiv,div1,div2,div3,div4);
+      div.append(imgdiv,div1,div2,divv3,div4);
       document.querySelector("#itemsdetails").append(div);
 
 
@@ -207,11 +207,11 @@ var arr=[
 }
  var addcart=[];
     
-    function cartfun(i)
+    function cartfun(ind)
     {
      var a=arr.filter(function(ele,index)
      {
-         return index===i;
+         return index===ind;
      });
 
     addcart.push(a[0]);
