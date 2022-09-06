@@ -140,12 +140,16 @@ var arr=[
       star.setAttribute("class","fa fa-star checked");
   
       var rating=document.createElement("p");
-      rating.setAttribute("id","ratingg");
+      
       rating.append(star," ",ele.itemRating);
        
-       
-  
-  
+      if(ele.itemRating>=4.2)
+      {
+        rating.setAttribute("id","ratinggreen");
+      }
+      else{
+        rating.setAttribute("id","ratingorange");
+      }
       var i=document.createElement("i");
       i.setAttribute("class","fa-solid fa-indian-rupee-sign");
   
