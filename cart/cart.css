@@ -28,9 +28,9 @@ img+span{
     gap: 10px;
 }
 #right{
-    width: 70%;
+    width: 80%;
     border: 1px solid;
-        float: right;
+    text-align: center;
 
 }
 #content{
@@ -38,6 +38,31 @@ img+span{
     margin: auto;
     display: flex;
     justify-content: space-between;
+}
+.qtychange{
+    border: 1px solid black;
+    font-size: 20px;
+    padding: 5px 10px;
+}
+.qtychange>button{
+    border: none;
+    padding: 4px;
+    font-size: 20px;
+    background-color: white;
+    color: lightgreen;
+}
+.qtychange>span{
+    margin: auto 4px;
+}
+#right>div>p{
+    width: 40%;
+}
+#right>div>div{
+    width: 20%;
+    margin: auto 20px;
+}
+#right>div{
+    margin: 5px auto;
 }
 
 
