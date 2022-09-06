@@ -1,8 +1,56 @@
 var arr=[
 
     {
+      itemName: "Guptaji Shakahari Bhojnalay",
+      itemTag:"North Indian",
+      itemRating:"3.5",
+      itemPrice:"$5 for two",
+      itemDiscount:"30% off | USE TRY30",
+      itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/jb9iyqwlhuyxyvb6zwnz",
+    },
+    {
+      itemName: "Manohar Dairy and Restaurant",
+      itemTag:"Sweets",
+      itemRating:" 4.3",
+      itemPrice:"$ 5 for two",
+      itemDiscount:"30% off | USE TRY30",
+      itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/v6elbsatlbi93xeq0g3c",
+    },
+    {
+      itemName: "Anjani Bhojnalay",
+      itemTag:"North Indian",
+      itemRating:" 4.8",
+      itemPrice:"$10 for two",
+      itemDiscount:"30% off | USE TRY30",
+      itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/u7hwixd7b4papoe2hwdu",
+    },
+    {
+      itemName: "Burger King",
+      itemTag:"Burger",
+      itemRating:"5.0",
+      itemPrice:"$10 for three",
+      itemDiscount:"30% off | USE TRY30",
+      itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/yzdmieopbbypvdfybrur",
+    },
+    {
+      itemName: "Biryani By Kilo",
+      itemTag:"Biryani",
+      itemRating:" 4.3",
+      itemPrice:"$ 20 for three",
+      itemDiscount:"30% off | USE TRY30",
+      itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/qjlxj9scdfjn6jlytt1x",
+    },
+    {
+      itemName: "Idli & More",
+      itemTag:"South Indian",
+      itemRating:"5.0",
+      itemPrice:"$10 for three",
+      itemDiscount:"30% off | USE TRY30",
+      itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/yti6qdbmzawis39mjfni",
+    },
+    {
       itemName: "6 Veg Cheese Pizza",
-      itemDetails:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
+      itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
       itemRating:" 4.3",
       itemPrice:"$ 50 for three",
       itemDiscount:"30% off | USE TRY30",
@@ -10,31 +58,7 @@ var arr=[
     },
     {
       itemName: "6 Veg Cheese Pizza",
-      itemDetails:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
-      itemRating:" 4.3",
-      itemPrice:"$ 50 for three",
-      itemDiscount:"30% off | USE TRY30",
-      itemImage:"file:///E:/Unit%204%20project/Project%20%201/swiggy/Homepagefolder/images/pizza%20folder/xei1dsmwtjuacuu4sifv.webp",
-    },
-    {
-      itemName: "6 Veg Cheese Pizza",
-      itemDetails:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
-      itemRating:" 4.3",
-      itemPrice:"$ 50 for three",
-      itemDiscount:"30% off | USE TRY30",
-      itemImage:"file:///E:/Unit%204%20project/Project%20%201/swiggy/Homepagefolder/images/pizza%20folder/a02irpy5vp4tntpsrfrh.webp",
-    },
-    {
-      itemName: "6 Veg Cheese Pizza",
-      itemDetails:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
-      itemRating:" 4.3",
-      itemPrice:"$ 50 for three",
-      itemDiscount:"30% off | USE TRY30",
-      itemImage:"file:///E:/Unit%204%20project/Project%20%201/swiggy/Homepagefolder/images/pizza%20folder/gcvgxyregl6vp836iqkb.webp",
-    },
-    {
-      itemName: "6 Veg Cheese Pizza",
-      itemDetails:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
+      itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
       itemRating:" 4.3",
       itemPrice:"$ 50 for three",
       itemDiscount:"30% off | USE TRY30",
@@ -42,38 +66,14 @@ var arr=[
     },
     {
       itemName: "6 Veg Cheese Pizza",
-      itemDetails:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
-      itemRating:" 4.3",
-      itemPrice:"$ 50 for three",
-      itemDiscount:"30% off | USE TRY30",
-      itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
-    },
-    {
-      itemName: "6 Veg Cheese Pizza",
-      itemDetails:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
-      itemRating:" 4.3",
-      itemPrice:"$ 50 for three",
-      itemDiscount:"30% off | USE TRY30",
-      itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
-    },
-    {
-      itemName: "6 Veg Cheese Pizza",
-      itemDetails:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
-      itemRating:" 4.3",
-      itemPrice:"$ 50 for three",
-      itemDiscount:"30% off | USE TRY30",
-      itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
-    },
-    {
-      itemName: "6 Veg Cheese Pizza",
-      itemDetails:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
+      itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
       itemRating:" 4.3",
       itemPrice:"$ 50 for three",
       itemDiscount:"30% off | USE TRY30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
     }, {
         itemName: "6 Veg Cheese Pizza",
-        itemDetails:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
+        itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
         itemRating:" 4.3",
         itemPrice:"$ 50 for three",
         itemDiscount:"30% off | USE TRY30",
@@ -81,7 +81,7 @@ var arr=[
       },
       {
         itemName: "6 Veg Cheese Pizza",
-        itemDetails:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
+        itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
         itemRating:" 4.3",
         itemPrice:"$ 50 for three",
         itemDiscount:"30% off | USE TRY30",
@@ -89,7 +89,7 @@ var arr=[
       },
       {
         itemName: "6 Veg Cheese Pizza",
-        itemDetails:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
+        itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
         itemRating:" 4.3",
         itemPrice:"$ 50 for three",
         itemDiscount:"30% off | USE TRY30",
@@ -116,11 +116,11 @@ var arr=[
       name.setAttribute("id","productname");
       name.innerText=ele.itemName;
   
-      var itemdetail=document.createElement("p");
-      itemdetail.setAttribute("id","itemcontent")
-      itemdetail.innerText=ele.itemDetails;
+      var itemtag=document.createElement("p");
+      itemtag.setAttribute("id","itemtag")
+      itemtag.innerText=ele.itemTag;
   
-      div1.append(name,itemdetail);
+      div1.append(name,itemtag);
   
       var star=document.createElement("span");
       star.setAttribute("class","fa fa-star checked");

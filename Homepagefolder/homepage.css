@@ -187,6 +187,7 @@ background-color:rgb(2, 2, 31);
     transform: scale(1.1);
  }
  #productname{
-    margin-top: 5px;
+    margin-top: 10px;
+    margin-bottom:5px;
  }
 
