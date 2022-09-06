@@ -1,0 +1,215 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+#navbar1{
+    height: 80px;
+   
+    display: flex;
+    justify-content:space-around;
+     
+    color:whitesmoke;
+}
+#rightpart{
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    font-size: large;
+}
+#leftpart>a>img{
+    width: 100%;
+    height: 100%;
+    margin-top: 15px;
+ 
+}
+#leftpart>a{
+    
+    width: 40px;
+    height: 50px;
+}
+#leftpart>a>img:hover{
+    transform: scale(1.1);
+}
+#leftpart{
+    display: flex;
+     gap: 30px;
+
+    
+}
+#rightpart>a{
+    color:rgb(2, 2, 31);
+    font-size: 18px;
+    text-decoration: none;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#rightpart>a:hover{
+    color: red;
+}
+#leftpart>h4{
+    margin-top:30px;
+   color: black ;
+}
+
+#navbar2{
+    height: 80px;
+  
+    display: flex;
+    justify-content:space-around;
+     margin-top: 20px;
+    color:whitesmoke;
+}
+#rightofnav2{
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    font-size: large;
+}
+
+#leftofnav2>img{
+    width: 12%;
+    height: 60%;
+    margin-top: 15px;
+ 
+}
+ 
+#rightofnav2>a{
+    color:rgb(2, 2, 31);
+    font-size: 18px;
+    text-decoration: none;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#rightofnav2>a:hover{
+    color: red;
+}
+#leftofnav2>h1{
+    margin-top:25px;
+    color: black;
+
+}
+
+#card{
+display: flex;
+justify-content: center;
+gap: 50px;
+height:330px;
+background-color:rgb(2, 2, 31);
+
+}
+#card>div{
+    margin-top: 40px;
+    margin-bottom: 30px;
+  
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    
+    cursor: pointer;
+    
+}
+#card>div>img{
+    width: 100%;
+    height:100%;
+}
+
+#itemsdetails{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+   
+    width: 90%;
+    margin:auto;
+     
+    margin-top: 40px;
+    margin-bottom: 30px;
+     
+}
+
+#itemsdetails>div>div>img{
+    width:100%;
+    height:100%;
+    
+    
+    
+}
+#itemsdetails>div>div:first-child{
+    
+    height:200px;
+     
+    margin: auto;
+
+}
+#itemsdetails>div{
+    padding: 10px;
+     width: 90%;
+     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+#itemsdetails>div:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+     
+}
+
+#rating_and_price{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+#parentofcart{
+    text-align: center;
+     
+}
+.Addtocart{
+    background-color:rgb(2, 2, 31);
+    color: white;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+.Addtocart:hover{
+  cursor: pointer;
+  transform:scale(1.1);
+}
+#ratingorange{
+    background-color: rgb(192, 126, 5);
+    padding: 5px 8px 5px 5px;
+    color: white;
+    font-size: small;
+}
+#ratinggreen{
+    background-color: rgb(3, 99, 3);
+    padding: 5px 8px 5px 5px;
+    color: white;
+    font-size: small;
+}
+ 
+#discount{
+    color:rgb(99, 72, 22);
+}
+#itemcontent{
+    margin-top: 10px;
+}
+ #card>div>img:hover{
+    transform: scale(1.1);
+ }
+ #productname{
+    margin-top: 10px;
+    margin-bottom:6px;
+ }
+
+#parentdiscount{
+    display: flex;
+    gap:6px;
+    justify-content:start;
+    color: rgb(36, 59, 102);
+    font-weight: bold;
+    font-size: 17px;
+}
+#discount{
+    font-size: 17px;
+    
+}
+#price{
+    font-size: 17px;
+}
+ 
