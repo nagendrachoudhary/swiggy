@@ -202,6 +202,7 @@ var arr=[
       var i1=document.createElement("i");
       i1.setAttribute("class","fa-solid fa-percent")
       
+      
       var temp=document.createElement("p");
       temp.innerText="off | ";
 
