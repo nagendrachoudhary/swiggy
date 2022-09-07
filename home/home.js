@@ -111,7 +111,7 @@ var arr=[
         deliveryTime:"30",
       },
       {
-        itemName: "Balaji Vaishnav Bhojanalay",
+        itemName: "Pooja Veg Bhojnalaya",
         itemTag:"North Indian",
         itemRating:"4.6",
         itemPrice:"200",
@@ -201,7 +201,6 @@ var arr=[
      
       var i1=document.createElement("i");
       i1.setAttribute("class","fa-solid fa-percent")
-      
       
       var temp=document.createElement("p");
       temp.innerText="off | ";
