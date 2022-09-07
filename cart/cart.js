@@ -16,7 +16,10 @@ var obj =
         price:50
     }
 ]
+
 showcartdata(obj)
+var addData = JSON.parse(localStorage.getItem('address'))||[]
+showAddress()
 function showcartdata(obj){
 obj.map(function(ele,index){
     var div = document.createElement('div');
@@ -38,5 +41,51 @@ obj.map(function(ele,index){
     setTimeout(() => {
         document.getElementById('right').append(div)
     }, 100);
+})
+}
+function addnewadd(){
+//     <div id="addbox1">
+//     <p>ffsfs</p>
+//     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio explicabo provident unde est accusamus ab delectus tempore saepe velit vel!</p>
+//     <p>34 min</p>
+//     <button data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="addnewadd()">Add New</button>
+// </div>
+var add = document.getElementById('add').value
+var pin = document.getElementById('pincode').value
+var country = document.getElementById('country').value
+var state = document.getElementById('state').value
+var city = document.getElementById('city').value
+var div = document.createElement('div')
+var address = add+' '+city+' '+state+' '+country+','+pin
+var p1 = document.createElement('p')
+p1.innerText = 'Others'
+var p2 = document.createElement('p')
+p2.innerText= address
+var p3 = document.createElement('p')
+p3.innerText = '44 Min'
+var button = document.createElement('button')
+button.innerText='Deliver here'
+button.setAttribute('class','deliver_here')
+div.append(p1,p2,button,p3)
+document.querySelector('#address').append(div)
+ var obj = {
+    address:address
+ }
+ addData.push(obj)
+ localStorage.setItem('address',JSON.stringify(addData))
+}
+function showAddress(){
+addData.map(function(ele,index){
+    var p1 = document.createElement('p')
+p1.innerText = 'Others'
+var p2 = document.createElement('p')
+p2.innerText= ele.address
+var p3 = document.createElement('p')
+p3.innerText = '44 Min'
+var button = document.createElement('button')
+button.innerText='Deliver here'
+button.setAttribute('class','deliver_here')
+div.append(p1,p2,button,p3)
+document.querySelector('#address').append(div)
 })
 }
