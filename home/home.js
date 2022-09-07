@@ -127,6 +127,11 @@ var arr=[
     
     document.getElementById("search").append("  ","Search");
     document.getElementById("navcart").append("  ","Cart");
+    var count_add_cart=document.createElement("p");
+    count_add_cart.setAttribute("id","count_cart");
+    document.getElementById("navcart").append(count_add_cart);
+
+    
     var ans=JSON.parse(localStorage.getItem("city")) || "";
     if(ans.length==0)
     {
@@ -233,22 +238,38 @@ var arr=[
 
   });
 }
- var addcart=[];
-    
+ var addcart=JSON.parse(localStorage.getItem("cart")) || [];
+ var count=localStorage.getItem("no_of_count") || 0;
+ if(count!=0)
+ {
+ document.getElementById("count_cart").innerText=count;
+ }
     function cartfun(ind)
     {
-      var count=0;
+      count++;
      var a=arr.filter(function(ele,index)
      {
          return index===ind;
      });
+     localStorage.setItem("no_of_count",count);
+     document.getElementById("count_cart").innerText=count;
 
     addcart.push(a[0]);
     
     localStorage.setItem("cart",JSON.stringify(addcart));
-    
+    if(count!==0)
+    {
+      document.getElementById("count_cart").setAttribute("class","count");
+    }
 
     }
+    if(count!==0)
+    {
+      document.getElementById("count_cart").setAttribute("class","count");
+    }
+    
+
+    
 
     function rating_sort()
     {
