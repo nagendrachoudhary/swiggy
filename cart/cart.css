@@ -2,6 +2,14 @@
     padding: 0;
     margin: 0;
 }
+body{
+    background-color: antiquewhite;
+}
+.div1 ,.div2{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+}
 .flex{
     display: flex;
     justify-content: space-around;
@@ -59,13 +67,18 @@ img+span{
 }
 #right>div>div{
     width: 24%;
-    margin: auto 20px;
+    /* margin: auto 10px; */
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
 }
 #right>div{
     margin: 5px auto;
 }
 #addbox{
     order: 1;
+}
+#left{
+    margin-right: 20px;
 }
 
 
