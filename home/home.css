@@ -221,6 +221,13 @@ background-color:rgb(2, 2, 31);
     color: white;
     font-size: small;
 }
+#ratingred{
+    background-color:red;
+    padding: 5px 8px 5px 5px;
+    color: white;
+    font-size: small;
+}
+}
  
 #discount{
     color:rgb(99, 72, 22);
