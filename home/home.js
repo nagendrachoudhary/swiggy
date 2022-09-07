@@ -8,6 +8,7 @@ var arr=[
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/jb9iyqwlhuyxyvb6zwnz",
       itemCoupon_code:"USETRY30",
+      deliveryTime:"15",
 
     },
     {
@@ -18,15 +19,17 @@ var arr=[
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/v6elbsatlbi93xeq0g3c",
       itemCoupon_code:"USETRY30",
+      deliveryTime:"30",
     },
     {
       itemName: "Anjani Bhojnalay",
       itemTag:"North Indian",
       itemRating:"4.8",
       itemPrice:"200",
-      itemDiscount:"30",
+      itemDiscount:"20",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/u7hwixd7b4papoe2hwdu",
       itemCoupon_code:"USETRY30",
+      deliveryTime:"30",
     },
     {
       itemName: "Burger King",
@@ -36,6 +39,7 @@ var arr=[
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/yzdmieopbbypvdfybrur",
       itemCoupon_code:"USETRY30",
+      deliveryTime:"25",
     },
     {
       itemName: "Biryani By Kilo",
@@ -45,6 +49,7 @@ var arr=[
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/qjlxj9scdfjn6jlytt1x",
       itemCoupon_code:"USETRY30",
+      deliveryTime:"35",
     },
     {
       itemName: "Idli & More",
@@ -54,6 +59,7 @@ var arr=[
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/yti6qdbmzawis39mjfni",
       itemCoupon_code:"USETRY30",
+      deliveryTime:"18",
     },
     {
       itemName: "Rice Bowl Thai & Chinese",
@@ -63,6 +69,7 @@ var arr=[
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/tcg9zzpjyaopkhmdxgus",
       itemCoupon_code:"USETRY30",
+      deliveryTime:"36",
     },
     {
       itemName: "6 Veg Cheese Pizza",
@@ -72,6 +79,7 @@ var arr=[
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
       itemCoupon_code:"USETRY30",
+      deliveryTime:"40",
     },
     {
       itemName:"Sagar Gaire - Kolar",
@@ -81,14 +89,16 @@ var arr=[
       itemDiscount:"30",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/cxgudmo1mrxz7v9jnjz1",
       itemCoupon_code:"USETRY30",
+      deliveryTime:"26",
     }, {
         itemName: "6 Veg Cheese Pizza",
         itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
         itemRating:"4.2",
         itemPrice:"200",
-        itemDiscount:"30",
+        itemDiscount:"23",
         itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
         itemCoupon_code:"USETRY30",
+        deliveryTime:"30",
       },
       {
         itemName: "6 Veg Cheese Pizza",
@@ -98,30 +108,39 @@ var arr=[
         itemDiscount:"30",
         itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
         itemCoupon_code:"USETRY30",
+        deliveryTime:"30",
       },
       {
         itemName: "6 Veg Cheese Pizza",
         itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
         itemRating:"4.6",
         itemPrice:"200",
-        itemDiscount:"30",
+        itemDiscount:"40",
         itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
         itemCoupon_code:"USETRY30",
+        deliveryTime:"45",
       },
   
     ];
+
+    localStorage.setItem("main array",JSON.stringify(arr));
     
     document.getElementById("search").append("  ","Search");
     document.getElementById("navcart").append("  ","Cart");
- 
-
+    var ans=JSON.parse(localStorage.getItem("city")) || "";
+    if(ans.length==0)
+    {
+      document.getElementById("location").innerText="Maharana Pratap Square Delhi";
+    }
+    else{
+      document.getElementById("location").innerText=ans;
+    }
+     
   display();
-    function display(){
+
+      function display(){
       document.getElementById("itemsdetails").innerText="";
- 
-    
-   
- 
+
     arr.map(function(ele,index)
     {
       var div=document.createElement("div");
@@ -149,6 +168,8 @@ var arr=[
       var rating=document.createElement("p");
       
       rating.append(star," ",ele.itemRating);
+
+      
        
       if(ele.itemRating>=4.2)
       {
@@ -157,6 +178,7 @@ var arr=[
       else{
         rating.setAttribute("id","ratingorange");
       }
+      
       var i=document.createElement("i");
       i.setAttribute("class","fa-solid fa-indian-rupee-sign");
   
@@ -209,6 +231,7 @@ var arr=[
     
     function cartfun(ind)
     {
+      var count=0;
      var a=arr.filter(function(ele,index)
      {
          return index===ind;
@@ -269,3 +292,36 @@ var arr=[
       })
       display();
     }
+    function delivery_time_sort()
+    {
+      event.preventDefault();
+      arr.sort(function(a,b){
+        if(a.deliveryTime>b.deliveryTime)
+        {
+          return 1;
+        }
+        if(a.deliveryTime<b.deliveryTime)
+        {
+          return -1;
+        }
+        return 0;
+      })
+      display();
+    }
+    function sorting_rel()
+    {
+      event.preventDefault();
+      arr.sort(function(a,b){
+        if(a.deliveryTime>b.deliveryTime)
+        {
+          return 1;
+        }
+        if(a.deliveryTime<b.deliveryTime)
+        {
+          return -1;
+        }
+        return 0;
+      })
+      display();
+    }
+     
