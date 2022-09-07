@@ -175,8 +175,12 @@ var arr=[
       {
         rating.setAttribute("id","ratinggreen");
       }
-      else{
+      else if(ele.itemRating>=3)
+      {
         rating.setAttribute("id","ratingorange");
+      }
+      else{
+        rating.setAttribute("id","ratingred");
       }
       
       var i=document.createElement("i");
