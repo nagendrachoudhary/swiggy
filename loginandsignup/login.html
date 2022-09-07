@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        #internal_box{
+            
+            width:434px;
+            padding-left: 40px;
+            padding-right:32px;
+            padding-top: 20px;
+            
+            height:100vh;
+
+        }
+
+        #left_side{
+            width:50%;
+        }
+
+        #right_side{
+            width:50%;
+        }
+        #loginbutton{
+            width:100%;
+            background-color: orange;
+            color:white;
+            border: 0px;
+            margin-top: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        #phonenumber{
+            width:100%;
+            box-sizing: border-box;
+            line-height: 40px;
+        }
+
+        #upper_box{
+            display: flex;
+        }
+
+        #right_side{
+            text-align: right;
+        }
+
+        #right_side > img{
+            width:65%;
+        }
+
+        #x_mark{
+            width:20px;
+        }
+
+        #sliding_box{
+            transition: 1s;
+            background-color: blue;
+            width:506px;
+            margin-top: -8px;
+            margin-right: -514px;
+        }
+
+    </style>
+</head>
+<body>
+   <button onClick="move()">Click</button> 
+   <div  style="display:flex; justify-content:flex-end;">
+    <div id="sliding_box">
+        <div id="internal_box">
+            <svg id="x_mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+            <div id="upper_box">
+                <div id="left_side">
+                    <h1>Login</h1>
+                    <p>or <a style="color:orange">create an account</a></p>
+                </div>
+                <div id="right_side">
+                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Image-login_btpq7r"/>
+                </div>
+            </div>
+            <input id="phonenumber" placeholder="Phone Number"/><br>
+            <button id="loginbutton">Login</button>
+            <p>By clicking on Login, I accept the <a style="color:black;" href="https://www.swiggy.com/terms-and-conditions">Terms & Conditions</a> & <a style="color:black" href="https://www.swiggy.com/privacy-policy">Privacy Policy</a></p>
+        </div>
+    </div>
+   </div>
+    
+</body>
+</html>
+
+
+<script>
+    
+    function move(){
+        document.getElementById("sliding_box").style.marginRight = "0px;";
+        document.getElementById("sliding_box").style.marginLeft = "0px";
+    }
+</script>
+
+
