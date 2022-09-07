@@ -110,14 +110,21 @@ var arr=[
       },
   
     ];
-  
+    
     document.getElementById("search").append("  ","Search");
     document.getElementById("navcart").append("  ","Cart");
-  
+ 
+
+  display();
+    function display(){
+      document.getElementById("itemsdetails").innerText="";
+ 
+    
+   
+ 
     arr.map(function(ele,index)
     {
       var div=document.createElement("div");
-  
       var imgdiv=document.createElement("div");
       var img=document.createElement("img");
       img.setAttribute("src",ele.itemImage);
@@ -131,7 +138,7 @@ var arr=[
       name.innerText=ele.itemName;
   
       var itemtag=document.createElement("p");
-      itemtag.setAttribute("id","itemtag")
+      itemtag.setAttribute("id","itemtag");
       itemtag.innerText=ele.itemTag;
   
       div1.append(name,itemtag);
@@ -162,8 +169,8 @@ var arr=[
       div2.setAttribute("id","rating_and_price");
       div2.append(rating,price);
   
-      var div3=document.createElement("div");
-      div3.setAttribute("id","parentdiscount");
+      var divv3=document.createElement("div");
+      divv3.setAttribute("id","parentdiscount");
       var discount=document.createElement("p");
       discount.setAttribute("id","discount");
       discount.innerText=ele.itemDiscount;
@@ -172,17 +179,17 @@ var arr=[
       i1.setAttribute("class","fa-solid fa-percent")
       
       var temp=document.createElement("p");
-      temp.innerText="off | "
+      temp.innerText="off | ";
 
       var coupon=document.createElement("p");
       coupon.innerText=ele.itemCoupon_code;
 
-      div3.append(discount,i1,temp,coupon);
+      divv3.append(discount,i1,temp,coupon);
 
       var div4=document.createElement("div");
-      div4.setAttribute("id","parentofcart")
+      div4.setAttribute("id","parentofcart");
       var cart=document.createElement("button");
-      cart.setAttribute("class","Addtocart")
+      cart.setAttribute("class","Addtocart");
       
       cart.innerText="Add to Cart";
       cart.addEventListener("click",function()
@@ -192,23 +199,19 @@ var arr=[
       div4.append(cart);
   
 
-      div.append(imgdiv,div1,div2,div3,div4);
+      div.append(imgdiv,div1,div2,divv3,div4);
       document.querySelector("#itemsdetails").append(div);
 
 
-       
-
   });
-
-     
+}
+ var addcart=[];
     
-    var addcart=[];
-    
-    function cartfun(i)
+    function cartfun(ind)
     {
      var a=arr.filter(function(ele,index)
      {
-         return index===i;
+         return index===ind;
      });
 
     addcart.push(a[0]);
@@ -217,7 +220,52 @@ var arr=[
     
 
     }
-     
 
-
-
+    function rating_sort()
+    {
+      event.preventDefault();
+      arr.sort(function(a,b){
+        if(a.itemRating>b.itemRating)
+        {
+          return -1;
+        }
+        if(a.itemRating<b.itemRating)
+        {
+          return 1;
+        }
+        return 0;
+      })
+      display();
+    }
+    function low_to_high_sort()
+    {
+      event.preventDefault();
+      arr.sort(function(a,b){
+        if(a.itemPrice>b.itemPrice)
+        {
+          return 1;
+        }
+        if(a.itemPrice<b.itemPrice)
+        {
+          return -1;
+        }
+        return 0;
+      })
+      display();
+    }
+    function high_to_low_sort()
+    {
+      event.preventDefault();
+      arr.sort(function(a,b){
+        if(a.itemPrice>b.itemPrice)
+        {
+          return -1;
+        }
+        if(a.itemPrice<b.itemPrice)
+        {
+          return 1;
+        }
+        return 0;
+      })
+      display();
+    }
