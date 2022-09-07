@@ -10,7 +10,6 @@ showAddress()
 function showcartdata(obj) {
     obj.map(function (ele, index) {
         var div = document.createElement('div');
-        div.setAttribute('class', 'flex1');
         var p = document.createElement('p');
         p.innerText = ele.itemName;
         var img = document.createElement('img')
@@ -47,9 +46,12 @@ function addnewadd() {
     var country = document.getElementById('country').value
     var state = document.getElementById('state').value
     var city = document.getElementById('city').value
-    var div = document.createElement('div')
     var address = add + ' ' + city + ' ' + state + ' ' + country + ',' + pin
-    var p1 = document.createElement('p')
+    var div = document.createElement('div')
+    var iconDiv = document.createElement('div');
+    iconDiv.innerHTML= '<i class="fas fa-map-marker-alt"></i>'
+    var pDiv  = document.createElement('div');
+    var p1 = document.createElement('h6')
     p1.innerText = 'Others'
     var p2 = document.createElement('p')
     p2.innerText = address
@@ -58,7 +60,8 @@ function addnewadd() {
     var button = document.createElement('button')
     button.innerText = 'Deliver here'
     button.setAttribute('class', 'deliver_here')
-    div.append(p1, p2, button, p3)
+    pDiv.append( p1, p2,  p3 ,button)
+    div.append(iconDiv , pDiv)
     document.querySelector('#address').append(div)
     var obj = {
         address: address
@@ -72,6 +75,12 @@ function addnewadd() {
 function showAddress() {
     addData.map(function (ele, index) {
         var div = document.createElement('div')
+        var icon = document.createElement("i");
+        icon.setAttribute('class' , ['fas' , 'fa-map-marker-alt'])
+        var iconDiv = document.createElement('div')
+        iconDiv.append(icon)
+        var pDiv  = document.createElement('div');
+        div.setAttribute('class', 'flex1');
         var p1 = document.createElement('p')
         p1.innerText = 'Others'
         var p2 = document.createElement('p')
@@ -81,7 +90,10 @@ function showAddress() {
         var button = document.createElement('button')
         button.innerText = 'Deliver here'
         button.setAttribute('class', 'deliver_here')
-        div.append(p1, p2, button, p3)
+        
+        pDiv.append(p1, p2,p3, button)
+        div.append(iconDiv , Pdiv)
+
         setTimeout(() => {
             document.querySelector('#address').append(div)
         }, 200);
