@@ -119,7 +119,7 @@ var arr=[
         itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/dif8jhqi558dpd2udq5x",
         itemCoupon_code:"USETRY30",
         deliveryTime:"45",
-      },
+      }
   
     ];
 
@@ -327,21 +327,4 @@ var arr=[
       display();
     }
      
-    function sort_category()
-    {
-      event.preventDefault();
-      var ans=document.querySelector("select").value;
-      arr.sort(function(a,b){
-        if(a.itemTag==ans)
-        {
-          return 1;
-        }
-        if(a.itemTag!==ans)
-        {
-          return -1;
-        }
-        return 0;
-      })
-      display();
-    }
-     
+  
