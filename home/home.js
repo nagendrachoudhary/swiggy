@@ -91,32 +91,32 @@ var arr=[
       itemCoupon_code:"USETRY30",
       deliveryTime:"26",
     }, {
-        itemName: "6 Veg Cheese Pizza",
-        itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
+        itemName: "Sweet Truth - Cake and Desserts",
+        itemTag:"Bakery",
         itemRating:"4.2",
         itemPrice:"200",
         itemDiscount:"23",
-        itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
+        itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/e32026d7yxvhyu4dqqnj",
         itemCoupon_code:"USETRY30",
         deliveryTime:"30",
       },
       {
-        itemName: "6 Veg Cheese Pizza",
-        itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
+        itemName: "Sharma & Vishnu Fast Food",
+        itemTag:"Chinese",
         itemRating:"4.1",
         itemPrice:"200",
         itemDiscount:"30",
-        itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
+        itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wsy0um42bk0ndpfjzepg",
         itemCoupon_code:"USETRY30",
         deliveryTime:"30",
       },
       {
-        itemName: "6 Veg Cheese Pizza",
-        itemTag:"Freshly baked 6 inch pizza with a topping of onion, capsicum, tomato and cheese.",
+        itemName: "Balaji Vaishnav Bhojanalay",
+        itemTag:"North Indian",
         itemRating:"4.6",
         itemPrice:"200",
         itemDiscount:"40",
-        itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
+        itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/dif8jhqi558dpd2udq5x",
         itemCoupon_code:"USETRY30",
         deliveryTime:"45",
       },
@@ -186,10 +186,12 @@ var arr=[
       price.setAttribute("id","price");
       price.append(i," ",ele.itemPrice);
       
-       
+      var delivery_time=document.createElement("p");
+      delivery_time.innerText=ele.deliveryTime+" MINS ";
+      
       var div2=document.createElement("div");
       div2.setAttribute("id","rating_and_price");
-      div2.append(rating,price);
+      div2.append(rating,".",delivery_time,".",price);
   
       var divv3=document.createElement("div");
       divv3.setAttribute("id","parentdiscount");
@@ -317,6 +319,24 @@ var arr=[
           return 1;
         }
         if(a.deliveryTime<b.deliveryTime)
+        {
+          return -1;
+        }
+        return 0;
+      })
+      display();
+    }
+     
+    function sort_category()
+    {
+      event.preventDefault();
+      var ans=document.querySelector("select").value;
+      arr.sort(function(a,b){
+        if(a.itemTag==ans)
+        {
+          return 1;
+        }
+        if(a.itemTag!==ans)
         {
           return -1;
         }

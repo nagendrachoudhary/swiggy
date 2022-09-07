@@ -9,7 +9,7 @@
    
     display: flex;
     justify-content:space-around;
-     
+     font-weight: bold;
     color:whitesmoke;
 }
 #location:hover{
@@ -49,9 +49,30 @@
     font-size:16px; 
     text-decoration: none;
     font-family:Arial, Helvetica, sans-serif;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    
 }
 #rightpart>a:hover{
     color: red;
+}
+ 
+#discountimg{
+    width:18px;
+    height:18px;
+   
+    
+    
+}
+#userlogin{
+    width:18px;
+    height:18px;
+   
+}
+#help{
+    width:18px;
+    height:18px;
 }
 #leftpart>h4{
     margin-top:30px;
@@ -94,7 +115,16 @@
     color: black;
 
 }
-
+select{
+    border: none;
+    margin-bottom: 33px;
+   
+    color: red;
+    font-weight: bold;
+    
+}
+ 
+ 
 #card{
 display: flex;
 justify-content: center;
@@ -159,6 +189,7 @@ background-color:rgb(2, 2, 31);
     justify-content: space-between;
     margin-top: 15px;
     margin-bottom: 20px;
+    
 }
 #parentofcart{
     text-align: center;
@@ -175,6 +206,8 @@ background-color:rgb(2, 2, 31);
 .Addtocart:hover{
   cursor: pointer;
   transform:scale(1.1);
+  background-color: red;
+  border:none;
 }
 #ratingorange{
     background-color: rgb(192, 126, 5);
