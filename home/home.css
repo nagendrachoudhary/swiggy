@@ -11,7 +11,8 @@
     justify-content:space-around;
      font-weight: bold;
     color:whitesmoke;
-    
+    width: 80%;
+    margin: auto;
     
 }
 #location:hover{
@@ -38,7 +39,7 @@ margin-left: -3px;
     font-size: large;
 }
 #leftpart>a>img{
-    width: 100%;
+    width: 130%;
     height: 100%;
     margin-top: 15px;
  
