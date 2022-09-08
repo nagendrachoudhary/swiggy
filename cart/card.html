@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Cart Item</title>
+</head>
+<style>
+    #table {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    table {
+        width: 60%;
+        border-collapse: collapse;
+        text-align: center;
+    }
+
+    img {
+        width: 40%;
+        height: 40%;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    button {
+        background-color: red;
+        padding: 10px;
+        font-size: 20px;
+        border: none;
+        color: white;
+    }
+
+    #button {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 20px;
+    }
+
+    #button>div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h2 {
+        margin: 0 10px;
+    }
+
+    i {
+        cursor: pointer;
+    }
+
+    label {
+        font-size: 25px;
+    }
+
+    input {
+        border-radius: 10px;
+        margin: 0 10px;
+        height: 30px;
+    }
+
+    #apply {
+        background-color: lightblue;
+        color: green;
+        border-radius: 5px;
+        padding: 6px;
+        cursor: pointer;
+    }
+
+    #payment label {
+        font-size: 18px;
+    }
+
+    #payment input {
+        height: 20px;
+        border-radius: 5px;
+    }
+
+    #payment>div {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0px;
+    }
+
+    #payment>:last-child {
+        display: flex;
+        justify-content: center;
+    }
+
+    #payment button {
+        background-color: rgb(79, 174, 206);
+        color: black;
+        border-radius: 8px;
+    }
+</style>
+
+<body>
+    <div id="table">
+        <div id="payment">
+            <h1>Payment</h1>
+            <div>
+                <label for="name">Card Number</label>
+                <input type="text" name="name" id="cardno" placeholder="Enter card Number">
+            </div>
+            <div>
+                <label for="name">Cardholder Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter Name">
+            </div>
+            <div>
+                <label for="name">CVV</label>
+                <input type="text" name="name" id="cvv" placeholder="Enter cvv">
+            </div>
+            <div>
+                <label for="name">Expiery Date</label>
+                <input type="text" name="name" id="date" placeholder="Enter date">
+            </div>
+            <div>
+                <button onclick="send_otp()">Send OTP</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var payemtdetails = {
+        card_no:123456789,
+        cvv:7894,
+        date:0925,
+    }
+    localStorage.setItem('details',JSON.stringify(payemtdetails))   
+    function send_otp(){
+        var cardno = document.querySelector('#cardno').value
+        var cvv = document.querySelector('#cvv').value
+        var date = document.querySelector('#date').value
+        if(cardno==''||cvv==''||date==''){
+            alert("All Details Required")
+        }else{
+            localStorage.setItem('otp',1234)
+            window.location.href = './otp.html'        }
+    }
+</script>
+
+</html>
