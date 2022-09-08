@@ -19,7 +19,9 @@
     padding: 0px 30px;
   }
 #logo>a>img{
-    width: 50px;
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
 }
 #logo{
     display: flex;
@@ -71,4 +73,94 @@ background-color: #282c3f;
 }
 #offers p{
     margin-top:40px;
+}
+.recommendeds{
+    text-align: right;
+    padding-right: 20px;
+}
+.recommendeds:hover{
+    color: #fc8019;
+    cursor: pointer;
+}
+ #bottum{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+ }
+ #products{
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+
+    overflow:scroll;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    
+   
+ }
+ #div3{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin-left: 30px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    
+ }
+#div3 img{
+    width: 200px;
+    height: 200px;
+    align-items: flex-end;
+    cursor: pointer;
+}
+#cart{
+   margin-top: 25px;
+}
+#cart:hover{
+    color: #fc8019;
+}
+.button:last-child{
+    display: flex;
+    align-items: center;
+}
+.button:last-child>p{
+    background-color: aqua;
+    border: #fc8019;
+    border-radius: 5px;
+}
+#cartimg{
+    width: 100%;
+}
+#cartsitems div>p{
+   margin: 0%;
+   display: flex;
+}
+.prices{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    overflow: scroll;
+    height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+}
+#total{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+#cartlist{
+    height: 5px;
+    overflow:scroll;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#button{
+    width: 100%;
+    height: 50px;
+    background-color: green;
+    color: white;
+    font-size: larger;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#button:hover{
+    background-color:#fc8019;
 }
