@@ -13,6 +13,13 @@
     width: 40%;
     justify-content:center;
 }
+.Restaurent>p{
+    font-size: xx-large;
+    font-weight: 900;
+    margin-left: 130px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
 #rightside{
     display: flex;
     width: 60%;
