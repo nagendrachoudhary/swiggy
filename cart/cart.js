@@ -1,18 +1,17 @@
 var itemdta =JSON.parse(localStorage.getItem('cart'))||[]
 var addData = JSON.parse(localStorage.getItem('address')) || []
+
 showcartdata(itemdta)
-// if(addData.length>=3){
-//     document.getElementById('addnewadd').disabled = true
-// }else{
-//     document.getElementById('addnewadd').disabled = false
-// }
+
 showAddress()
+
 function total_value(arr){
     var total_amt =  arr.reduce(function(acc,ele){
           return parseInt(acc)+parseInt(ele.itemPrice)
       },0)
       setTimeout(() => {
-          document.getElementById('total_value').innerText = total_amt
+          document.getElementById('total_value').innerText = '₹'+total_amt
+          document.getElementById('final_Amt').innerText = '₹'+(total_amt+20)
       }, 200);
   }
 
@@ -24,7 +23,6 @@ function showcartdata(obj) {
         var p = document.createElement('p');
         p.setAttribute('class','foodname')
         p.innerHTML=`<b>${index+1}</b> ${ele.itemName}`
-        // p.innerText = ele.itemName;
         var img = document.createElement('img')
         img.src=ele.itemImage
         imgdiv.append(p,img)
@@ -36,13 +34,14 @@ function showcartdata(obj) {
         btn1.addEventListener('click',function(){addqty(index)})
         btn1.innerText = '+'
         var span = document.createElement('span')
-        span.innerText = 1
+        span.setAttribute('id',index)
+        span.innerText = ele.qty
         var btn2 = document.createElement('button')
         btn2.addEventListener('click',function(){removeqty(index)})
         btn2.innerText = '-'
         div1.append(btn1, span, btn2)
         var p2 = document.createElement('p')
-        p2.innerText = ele.itemPrice
+        p2.innerText = '₹'+ele.itemPrice
         pricediv.append(div1,p2)
         div.append(imgdiv ,pricediv)
         setTimeout(() => {
@@ -53,19 +52,19 @@ function showcartdata(obj) {
 }
 
 function addnewadd() {
-    //     <div id="addbox1">
-    //     <p>ffsfs</p>
-    //     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio explicabo provident unde est accusamus ab delectus tempore saepe velit vel!</p>
-    //     <p>34 min</p>
-    //     <button data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="addnewadd()">Add New</button>
-    // </div>
-
+    if(addData.length>2){
+        alert("You can't add more than three")
+    }else{
     var add = document.getElementById('add').value
     var pin = document.getElementById('pincode').value
     var country = document.getElementById('country').value
     var state = document.getElementById('state').value
     var city = document.getElementById('city').value
     var address = add + ' ' + city + ' ' + state + ' ' + country + ',' + pin
+    var obj = {
+        address: address
+    }
+    addData.push(obj)
     var div = document.createElement('div')
     var iconDiv = document.createElement('div');
     iconDiv.innerHTML= '<i class="fas fa-map-marker-alt"></i>'
@@ -78,17 +77,17 @@ function addnewadd() {
     p3.innerText = '44 Min'
     var button = document.createElement('button')
     button.innerText = 'Deliver here'
+    button.addEventListener('click',payment_mode)
     button.setAttribute('class', 'deliver_here')
     pDiv.append( p1, p2,  p3 ,button)
-    div.append(iconDiv , pDiv)
+    var iconDiv1 = document.createElement('div');
+    iconDiv1.innerHTML= `<i class="fa fa-trash text-danger" onClick="removeadd(${addData.length-1})" aria-hidden="true"></i>`
+    div.append(iconDiv , pDiv,iconDiv1)
     document.querySelector('#address').append(div)
-    var obj = {
-        address: address
-    }
-    addData.push(obj)
     setTimeout(() => {
         localStorage.setItem('address', JSON.stringify(addData))
     }, 500);
+}
 }
 
 function showAddress() {
@@ -105,11 +104,13 @@ function showAddress() {
         var p3 = document.createElement('p')
         p3.innerText = '44 Min'
         var button = document.createElement('button')
+        button.addEventListener('click',payment_mode)
         button.innerText = 'Deliver here'
         button.setAttribute('class', 'deliver_here')
-        
         pDiv.append(p1, p2,p3, button)
-        div.append(iconDiv , pDiv)
+        var iconDiv1 = document.createElement('div');
+    iconDiv1.innerHTML= `<i class="fa fa-trash text-danger" onClick="removeadd(${index})" aria-hidden="true"></i>`
+    div.append(iconDiv , pDiv,iconDiv1)
 
         setTimeout(() => {
             document.querySelector('#address').append(div)
@@ -118,21 +119,56 @@ function showAddress() {
  
 }
 
+function removeadd(i){
+    document.querySelector('#address').innerHTML=''
+addData.splice(i,1)
+localStorage.setItem('address',JSON.stringify(addData))
+showAddress()
+window.location.reload()
+}
+
 function addqty(i){
     document.getElementById('totalcart').innerText = ''
+    var a = JSON.parse(localStorage.getItem('cart'))
     itemdta.map(function(ele,index){
         if(i==index){
-            ele.itemPrice = parseInt(ele.itemPrice)+parseInt(ele.itemPrice)
+            ele.qty = ele.qty+1;
+            ele.itemPrice = parseInt(ele.itemPrice)+parseInt(a[i].itemPrice)
         }
     })
     showcartdata(itemdta)
 }
 function removeqty(i){
-    document.getElementById('totalcart').innerText = ''
+document.getElementById('totalcart').innerText = ''
+var a = JSON.parse(localStorage.getItem('cart'))
 itemdta.map(function(ele,index){
     if(i==index){
-        ele.itemPrice = parseInt(ele.itemPrice)-parseInt(ele.itemPrice)
+        ele.itemPrice = parseInt(ele.itemPrice)-parseInt(a[i].itemPrice)
+        ele.qty = ele.qty-1;
+        if(ele.itemPrice==0){
+            itemdta.splice(i,1)
+            localStorage.setItem('cart',JSON.stringify(itemdta))
+        }
     }
 })
 showcartdata(itemdta)
 }
+function payment_mode(){
+    document.querySelector('#payMode').innerText = ''
+    var input = document.createElement('input')
+    input.type = 'checkbox'
+    input.addEventListener('click',function(){open_card(event)})
+    var span = document.createElement('span');
+    span.innerText = 'Pay via Card';
+    setTimeout(() => {
+        document.querySelector('#payMode').append(input,span)
+    }, 200);
+}
+function open_card(e){
+if(e.srcElement.checked){
+    window.location.href = './card.html'
+}else{
+    
+};
+}
+
