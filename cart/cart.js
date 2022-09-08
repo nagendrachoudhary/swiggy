@@ -7,14 +7,22 @@ showcartdata(itemdta)
 //     document.getElementById('addnewadd').disabled = false
 // }
 showAddress()
+
+
 function showcartdata(obj) {
     obj.map(function (ele, index) {
         var div = document.createElement('div');
+        var imgdiv = document.createElement('div');
+        imgdiv.setAttribute('class','flex_sb')
         var p = document.createElement('p');
-        p.innerText = ele.itemName;
+        p.setAttribute('class','foodname')
+        p.innerHTML=`<b>${index+1}</b> ${ele.itemName}`
+        // p.innerText = ele.itemName;
         var img = document.createElement('img')
         img.src=ele.itemImage
-        p.append(img)
+        imgdiv.append(p,img)
+        var pricediv = document.createElement('div');
+        pricediv.setAttribute('class','flex_sb')
         var div1 = document.createElement('div')
         div1.setAttribute('class', 'qtychange')
         var btn1 = document.createElement('button')
@@ -26,9 +34,10 @@ function showcartdata(obj) {
         div1.append(btn1, span, btn2)
         var p2 = document.createElement('p')
         p2.innerText = ele.itemPrice
-        div.append(p, div1, p2)
+        pricediv.append(div1,p2)
+        div.append(imgdiv ,pricediv)
         setTimeout(() => {
-            document.getElementById('right').append(div)
+            document.getElementById('totalcart').append(div)
         }, 100);
     })
 }
@@ -80,7 +89,7 @@ function showAddress() {
         var iconDiv = document.createElement('div')
         iconDiv.append(icon)
         var pDiv  = document.createElement('div');
-        div.setAttribute('class', 'flex1');
+        div.setAttribute('class', 'flex_sb');
         var p1 = document.createElement('p')
         p1.innerText = 'Others'
         var p2 = document.createElement('p')

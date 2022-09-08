@@ -14,22 +14,35 @@ body {
     border-radius: 5px;
 }
 
-.flex {
+.flex{
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 #navbar {
     margin: 20px auto;
 }
 
-img {
+ img {
     width: 10%;
 }
 
-.flex1 {
+.flex_sb {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+}
+ #totalcart>div>.flex_sb:last-child{
+  align-items: center;
+}
+.order_1{
+    order: 1;
+}
+.order-1>.flex_sb{
+    align-items: top !important;
+}
+.justify_aligh{
+text-align: justify;
 }
 
 img+span {
@@ -79,19 +92,23 @@ img+span {
     margin: auto 4px;
 }
 
-#right>div>p {
-    width: 40%;
+.foodname{
+    margin: 0;
+    width: fit-content;
+    text-align: start;
+}
+.foodname+img{
+    width: 25%;
+}
+.qtychange+p{
+    margin:0;
+}
+b{
+    color: red;
 }
 
-#right>div>div {
-    width: 24%;
-    /* margin: auto 10px; */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-#right>div {
-    margin: 5px auto;
+#totalcart>div {
+margin-bottom: 1.5rem;
 }
 
 #addbox {
@@ -178,4 +195,10 @@ img+span {
 
 #addbox p, h6 {
     margin-left: 1rem;
+}
+#totalcart{
+    max-height: calc(100vh - 270px);
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
 }
