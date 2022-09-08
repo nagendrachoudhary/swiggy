@@ -202,3 +202,11 @@ margin-bottom: 1.5rem;
     display: flex;
     flex-direction: column;
 }
+.non_contact{
+    align-items: start !important ;
+    border: 1px solid;
+    padding: 1rem;
+}
+.order-1>div{
+    margin: 2rem auto;
+}

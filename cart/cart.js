@@ -7,7 +7,12 @@ showcartdata(itemdta)
 //     document.getElementById('addnewadd').disabled = false
 // }
 showAddress()
-
+function total_value(arr){
+    var total_amt =  arr.reduce(function(acc,ele){
+          return parseInt(acc.itemPrice)+parseInt(ele.itemPrice)
+      })
+      console.log(total_amt);
+  }
 
 function showcartdata(obj) {
     obj.map(function (ele, index) {
@@ -40,6 +45,9 @@ function showcartdata(obj) {
             document.getElementById('totalcart').append(div)
         }, 100);
     })
+    setTimeout(() => {
+        total_value(obj)
+    }, 1000);
 }
 
 function addnewadd() {
@@ -107,4 +115,6 @@ function showAddress() {
             document.querySelector('#address').append(div)
         }, 200);
     })
+
+
 }
