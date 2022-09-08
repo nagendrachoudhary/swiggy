@@ -141,7 +141,7 @@ var arr=[
     document.getElementById("location").innerText=ans;
   }
    
-display();
+ 
 
     function display(){
     document.getElementById("itemsdetails").innerText="";
