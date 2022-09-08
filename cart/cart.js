@@ -7,7 +7,14 @@ showcartdata(itemdta)
 //     document.getElementById('addnewadd').disabled = false
 // }
 showAddress()
-
+function total_value(arr){
+    var total_amt =  arr.reduce(function(acc,ele){
+          return parseInt(acc)+parseInt(ele.itemPrice)
+      },0)
+      setTimeout(() => {
+          document.getElementById('total_value').innerText = total_amt
+      }, 200);
+  }
 
 function showcartdata(obj) {
     obj.map(function (ele, index) {
@@ -26,10 +33,12 @@ function showcartdata(obj) {
         var div1 = document.createElement('div')
         div1.setAttribute('class', 'qtychange')
         var btn1 = document.createElement('button')
+        btn1.addEventListener('click',function(){addqty(index)})
         btn1.innerText = '+'
         var span = document.createElement('span')
         span.innerText = 1
         var btn2 = document.createElement('button')
+        btn2.addEventListener('click',function(){removeqty(index)})
         btn2.innerText = '-'
         div1.append(btn1, span, btn2)
         var p2 = document.createElement('p')
@@ -40,6 +49,7 @@ function showcartdata(obj) {
             document.getElementById('totalcart').append(div)
         }, 100);
     })
+  total_value(obj)
 }
 
 function addnewadd() {
@@ -84,13 +94,11 @@ function addnewadd() {
 function showAddress() {
     addData.map(function (ele, index) {
         var div = document.createElement('div')
-        var icon = document.createElement("i");
-        icon.setAttribute('class' , ['fas' , 'fa-map-marker-alt'])
         var iconDiv = document.createElement('div')
-        iconDiv.append(icon)
+        iconDiv.innerHTML= '<i class="fas fa-map-marker-alt"></i>'
         var pDiv  = document.createElement('div');
         div.setAttribute('class', 'flex_sb');
-        var p1 = document.createElement('p')
+        var p1 = document.createElement('h6')
         p1.innerText = 'Others'
         var p2 = document.createElement('p')
         p2.innerText = ele.address
@@ -101,10 +109,30 @@ function showAddress() {
         button.setAttribute('class', 'deliver_here')
         
         pDiv.append(p1, p2,p3, button)
-        div.append(iconDiv , Pdiv)
+        div.append(iconDiv , pDiv)
 
         setTimeout(() => {
             document.querySelector('#address').append(div)
         }, 200);
     })
+ 
+}
+
+function addqty(i){
+    document.getElementById('totalcart').innerText = ''
+    itemdta.map(function(ele,index){
+        if(i==index){
+            ele.itemPrice = parseInt(ele.itemPrice)+parseInt(ele.itemPrice)
+        }
+    })
+    showcartdata(itemdta)
+}
+function removeqty(i){
+    document.getElementById('totalcart').innerText = ''
+itemdta.map(function(ele,index){
+    if(i==index){
+        ele.itemPrice = parseInt(ele.itemPrice)-parseInt(ele.itemPrice)
+    }
+})
+showcartdata(itemdta)
 }
