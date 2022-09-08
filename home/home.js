@@ -149,12 +149,23 @@ var arr=[
     arr.map(function(ele,index)
     {
       var div=document.createElement("div");
+
+      
+
       var imgdiv=document.createElement("div");
       var img=document.createElement("img");
       img.setAttribute("src",ele.itemImage);
       img.setAttribute("alt","1");
       
       imgdiv.append(img);
+
+      img.addEventListener("click",function()
+      {
+        var product=arr[index];
+        localStorage.setItem("product_details",JSON.stringify(product));
+        location.href='../productdetails/productdetails.html';
+      })
+      
 
       var div1=document.createElement("div");
       var name=document.createElement("h4");
