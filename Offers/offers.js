@@ -8,11 +8,17 @@ arr.sort(function(a,b){
         return 1;}
         return 0;
 });
-document.getElementById("arr_length").innerText = arr.length||0;
+
 display();
 function display(){
-document.getElementById("main").innerText="";
-
+document.querySelector(".main").innerText="";
+document.querySelector(".Restaurent").innerText = "";
+var restaurent = document.querySelector(".Restaurent");
+var p1 = document.createElement("p");
+p1.innerText = "All offers (1543)";
+var p2 = document.createElement("p");
+p2.innerText = "All offers and deals from restaurants near you";
+restaurent.append(p1,p2);
 arr.map(function(ele,index)
 {
 var div=document.createElement("div");
@@ -93,8 +99,8 @@ cartfun(index);
 div4.append(cart);
 
 div.append(imgdiv,div1,div2,divv3,div4);
-document.getElementById("main").append(div);
-
+document.querySelector(".main").append(div);
 
 });
 }
+

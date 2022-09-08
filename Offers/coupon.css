@@ -65,11 +65,11 @@
     display: flex;
     margin-left: 100px;
 }
-#tabs button:last-child{
+#tabs button:first-child{
     font-weight: 300;
     color: rgb(147, 147, 147);
 }
-#tabs button:last-child:hover{
+#tabs button:first-child:hover{
     font-weight: 300;
     color: rgb(81, 81, 81);
 }
@@ -85,116 +85,52 @@
 #tabs button:hover{
 transform: scale(1.1,1.1);
 }
-.Restaurent{
-    display: grid;
-    margin-left: 100px;
-    padding: 30px;
-}
-.Restaurent>p:first-child{
-font-size: x-large;
-font-family: "Gill Sans", sans-serif;
-font-weight: 600;
-
-}
-.Restaurent>p:last-child{
-    color: rgb(95, 86, 86);
-    font-size: medium;
-}
-
 .main{
-    margin-left: 130px;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
     gap: 20px;
-   
-    width: 90%;
-     
-    margin-top: 40px;
-    margin-bottom: 30px;
-     
-}
-.Addtocart{
-    background-color:rgb(2, 2, 31);
-    color: white;
-    border-radius: 5px;
-    margin-top: 20px;
-    padding: 8px;
-    margin-bottom: 10px;
-}
-.Addtocart:hover{
-  cursor: pointer;
-  transform:scale(1.1);
-}
-.main>div>div>img{
-    width:100%;
-    height:100%;
+    flex-wrap: wrap;
+    margin: 0 130px;
     
-    
-    
-}
-.main>div>div:first-child{
-    
-    height:200px;
-     
-    margin: auto;
-
 }
 .main>div{
-    padding: 10px;
-     width: 90%;
-     
+    display: grid;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 30px;
+    gap: 20px;
 }
-.main>div:hover{
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-     
-}
-#ratingorange{
-    background-color: rgb(192, 126, 5);
-    padding: 5px 8px 5px 5px;
-    color: white;
-    font-size: small;
-}
-#ratinggreen{
-    background-color: rgb(3, 99, 3);
-    padding: 5px 8px 5px 5px;
-    color: white;
-    font-size: small;
-}
- 
-#discount{
-    color:rgb(99, 72, 22);
-}
-#productname{
-    margin-top: 10px;
-    margin-bottom:6px;
- }
- #price{
-    font-size: 17px;
-}
-#rating_and_price{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-    margin-bottom: 20px;
-}
-#parentofcart{
-    text-align: center;
-     
-}
-.Addtocart{
-    background-color:rgb(2, 2, 31);
-    color: white;
-    border-radius: 5px;
-    margin-top: 20px;
-    padding: 8px;
-    margin-bottom: 10px;
-}
-#discountoff{
-    display: flex;
-    gap: 6px;
-    color: rgb(36, 59, 102);
+.main>div>button{
+    width: 30%;
+    height: 30px;
+    color: orange;
+    background-color: white;
+    border: 2px of orange;
+    font-size:small;
     font-weight: bold;
-    font-size: 17px;
+}
+.main>div>button:hover{
+    transform: scale(1.1,1.1)
+}
+#head{
+    font-size: large;
+    font-weight: bold;
+}
+#note{
+    color: rgb(128, 127, 127);
+}
+#more{
+    color: blue;
+}
+.main>div>div{
+    display: flex;
+    padding: 10px;
+    width: 40%;
+    justify-content: space-between;
+    background-color: rgba(235, 227, 195, 0.989);
+}
+.main>div>div>img{
+    width: 20%;
+    height: 20px;
 }
 #bottom{
     display: grid;
