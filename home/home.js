@@ -250,35 +250,36 @@ var arr=[
   });
 }
  var addcart=JSON.parse(localStorage.getItem("cart")) || [];
- var count=localStorage.getItem("no_of_count") || 0;
+ var count= JSON.parse(localStorage.getItem("cart")).length || 0;
  if(count!=0)
  {
  document.getElementById("count_cart").innerText=count;
+ document.getElementById("count_cart").setAttribute("class","count");
  }
     function cartfun(ind)
     {
-      count++;
+      
      var a=arr.filter(function(ele,index)
      {
          return index===ind;
      });
-     localStorage.setItem("no_of_count",count);
-     document.getElementById("count_cart").innerText=count;
+      
+     
 
     addcart.push(a[0]);
     
     localStorage.setItem("cart",JSON.stringify(addcart));
+    count=JSON.parse(localStorage.getItem("cart")).length;
     if(count!==0)
     {
       document.getElementById("count_cart").setAttribute("class","count");
     }
+     
+    document.getElementById("count_cart").innerText=count;
 
     }
-    if(count!==0)
-    {
-      document.getElementById("count_cart").setAttribute("class","count");
-    }
-    
+
+     
 
     
 
