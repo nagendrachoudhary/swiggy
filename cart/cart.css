@@ -63,6 +63,7 @@ img+span {
     width: 80%;
     border: 1px solid;
     text-align: center;
+    margin-bottom: 1rem;
 
 }
 
@@ -123,7 +124,7 @@ margin-bottom: 1.5rem;
     content: '';
     position: absolute;
     border-right: 1px dotted #111;
-    height: 80%;
+    height: 67%;
     top: 50px;
     left: -20px;
 }
@@ -136,7 +137,7 @@ margin-bottom: 1.5rem;
     text-align: center;
     width: 40px;
     left: -40px;
-    top: 30px;
+    top: 18px;
     box-shadow: 0 3px 5px 0 rgb(40 44 63 / 40%);
 }
 
@@ -145,7 +146,7 @@ margin-bottom: 1.5rem;
 }
 
 .payment {
-    top: 10px;
+    top: 0px;
 }
 
 
@@ -197,10 +198,9 @@ margin-bottom: 1.5rem;
     margin-left: 1rem;
 }
 #totalcart{
-    max-height: calc(100vh - 270px);
-    overflow-y: scroll;
     display: flex;
     flex-direction: column;
+    /* padding: 0 1rem; */
 }
 .non_contact{
     align-items: start !important ;
@@ -209,4 +209,25 @@ margin-bottom: 1.5rem;
 }
 .order-1>div{
     margin: 2rem auto;
+}
+.overFlow_div{
+    max-height: calc(100vh - 270px);
+    overflow-y: scroll;
+}
+.coupon{
+    border: 1px dotted black;
+    padding: 2rem;
+}
+.coupon>input{
+    border: none;
+    height: 2rem;
+
+}
+.flex_sb>p{
+    margin-bottom: 0;
+}
+#lastdiv{
+    border-top: 3px solid black;
+    padding: 0 1.5rem ;
+    padding-top: 1.5rem;
 }
