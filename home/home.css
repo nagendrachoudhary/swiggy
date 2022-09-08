@@ -240,7 +240,7 @@ background-color:rgb(2, 2, 31);
     color: white;
     font-size: small;
 }
-}
+
  
 #discount{
     color:rgb(99, 72, 22);
@@ -298,5 +298,10 @@ hr{
    
     
     margin-bottom: 20px;
+}
+
+img:hover{
+    cursor: pointer;
+    transform: scale(1.01);
 }
  
