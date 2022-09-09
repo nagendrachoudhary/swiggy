@@ -26,18 +26,7 @@
     </div>
     <div id="content">
         <div id="left">
-          <div  class="bg__white">
-            <div class="contact__side__box">
-              hi
-            </div>
-            <div class="main__padding">
-              <h3>Hi</h3>
-            </div>
-          </div>
           <div class=" bg__white main__padding">
-            <div class="contact__side__box delivery">
-              hi
-            </div>
             <h6>Choose a delivery address</h6>
             <p>Multiple addresses in this location</p>
             <div id="address" >
@@ -47,30 +36,51 @@
                   </div>
                   <div>
                     <h6>Add New Address</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio explicabo provident unde est accusamus ab delectus tempore saepe velit vel!</p>
+                    <p class="mx-0">Nandanvan Nagpur Maharashtra India,440009</p>
+                    <p class="mx-0">32 Min</p>
                     <button data-bs-toggle="modal" data-bs-target="#exampleModal" id="addnewadd">Add New</button>
                   </div>
                 </div>
             </div>
           </div>
             <div id="payment" class="bg__white main__padding">
-              <div class="contact__side__box payment">
-                hi
-              </div>
-              <div >
-                <h3>Hi</h3>
-              </div>
+                <h3>Payment</h3>
+                <div id="payMode">
+                  <div id="card_details">
+                </div>
+                </div>
             </div>
         </div>
         <div id="right" class="div1">
           <h1> Cart Items </h1>
-          <div id="totalcart">
-            <div class="order_1">
-              <div class="flex_sb">
+          <div class="overFlow_div pe-3">
+            <div id="totalcart">
+            </div>
+            <div class="order_1 px-1">
+              <div class="flex_sb non_contact">
                 <input type="checkbox" name="" id="">
-              <p class=" px-2"> ipsum dolor sit amet consectetur adipisicing elit. Fugit totam amet, fugiat nihil debitis repellat veritatis recusandae .</p>
+                <div>
+                  <h6 class="justify_aligh px-2 ms-0">Opted for no contact Delivery</h6>
+                <p class="justify_aligh px-2"> ipsum dolor sit amet consectetur adipisicing elit. Fugit totam amet, fugiat nihil .</p>
+                </div>
               </div>
             </div>
+            <div class="coupon my-3">
+              <input type="text"  class="form-control text-center" placeholder="Enter Coupen Code">
+            </div>
+            <p>Bill details</p>
+            <div class="flex_sb">
+              <p>Item Total Bill</p>
+              <p id="total_value"></p>
+            </div>
+            <div class="flex_sb">
+              <p>Tax amount</p>
+              <p id="tax">₹20</p>
+            </div>
+          </div>
+          <div id="lastdiv" class="flex_sb">
+            <h5>To Pay</h5>
+            <h5 id="final_Amt"></h5>
           </div>
         </div>
     </div>
@@ -108,7 +118,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="addnewadd()">Save changes</button>
+                <button type="button" data-bs-dismiss="modal" class="btn btn-primary" onclick="addnewadd()">Save changes</button>
             </div>
         </form>
       </div>
