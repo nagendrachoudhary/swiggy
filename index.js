@@ -153,7 +153,7 @@ document.querySelector("#continue2").addEventListener("click",function(){
 		}
 	})
 	if(ans.length==0){
-	alert("enter email and password")
+	alert("worng password")
     }
 	if(ans.length>0){
         localStorage.setItem("user",JSON.stringify(ans));

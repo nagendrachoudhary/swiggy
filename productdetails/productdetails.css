@@ -42,9 +42,11 @@ a:hover{
     margin-top: 50px;
 }
 #item img{
-    width: 300px;
-    height: 300px;
-    margin-left: 10%;
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+    margin-left: 50px;
+    border-radius: 20px;
 }
 #item{
     display: grid;
@@ -55,7 +57,7 @@ a:hover{
 #div2{
     display:flex;
     gap: 10px;
-    height: 30px;
+    
 }
 #offers{
     border: 1px solid white;
@@ -101,14 +103,16 @@ background-color: #282c3f;
     grid-template-columns: repeat(2,1fr);
     margin-left: 30px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
+    width: 400pc;
     
  }
 #div3 img{
-    width: 200px;
-height: 200px;
+    width: 150px;
+height: 150px;
+margin: 10px 0px;
 cursor: pointer;
 display: grid;
+border-radius: 20px;
 }
 #cart{
    margin-top: 25px;

@@ -203,8 +203,10 @@ button{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: white;
     position:absolute;
+    transition: 2s;
     top:0px;
     right:0px
+    
     
 }
 #signnames p ,h1{
@@ -218,8 +220,9 @@ button{
     /* border: 2px solid red */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     position:absolute;
-    top:0px;
-    right:-500px
+    transition: 2s;
+    top:-600px;
+    right:0px
     
     
 }
@@ -239,7 +242,9 @@ form{
     
 }
 #inputdata{
-    align-items: center;
+    text-align: center;
+    margin: 20px;
+    margin: auto;
 }
 form input{
     width: 400px;
@@ -247,12 +252,17 @@ form input{
     margin-bottom: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-form button{
+#continue,#continue2{
     width: 100%;
     display: grid;
     align-items: center;
-
+    text-align: center;
+    height: 50px;
+    font-size: larger;
+    color: white;
+    background-color: #fc8019;
 }
+
 
 #login{
     background-color: white;
@@ -275,9 +285,12 @@ form button{
     /* border: 2px solid red; */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: white;
+    
     position:absolute;
+    transition: 2s;
     top:0px;
     right:0px
+    
     
 }
 #signnames2 p ,h1{
@@ -289,9 +302,11 @@ form button{
     height: 600px;
     /* border: 2px solid red; */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    align-items: center;
     position:absolute;
-    top:0px;
-    right:-500px
+    transition: 2s;
+    top:-700px;
+    right: 0px;
     
 }
 #backtohome2{
@@ -309,16 +324,32 @@ form{
     justify-content: center;
 }
 #inputdata2{
-    align-items: center;
+    text-align: center;
+    margin: auto;
 }
 form input{
     width: 400px;
     height: 70px;
     margin-bottom: 10px;
+    text-align: center;
 }
 form button{
     width: 100%;
     display: grid;
     align-items: center;
-
+    margin: 20px 0px;
+}
+input{
+    width: 400px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 2px;
+}
+#change{
+   
+    cursor: pointer;
+}
+a{
+    color: #fc8019;
 }

@@ -107,16 +107,18 @@
         <div id="signnames">
         <h1 id="backtohome">X</h1>
         <h1>SIGN UP</h1>
-        <p>or <a href="">login to your account</a></p>
+        <p>or <a onclick="login()" href="" id="change">login to your account</a></p>
         </div>
         <div id="inputdata">
         <div id="signupform">
             <input id="phone" type="tel" placeholder="Phone number">
             <input id="name" type="text" placeholder="Name">
             <input id="email" type="email" placeholder="Email">
-            <input id="password" type="password" placeholder="Password">
+            <input id="password" type="password" placeholder="Password"><br>
             <a href="">Have a referral code?</a>
            <a id="continue"href="./home/home.html">CONTINUE</a>
+           <p>By creating an account, I accept the <a href="">Terms & Conditions</a> 
+            & <a href=""> Privacy Policy</a></p>
         </div>
     </div>
     </div>
@@ -126,14 +128,16 @@
         <div id="signnames2">
         <h1 id="backtohome2">X</h1>
         <h1>LOGIN</h1>
-        <p>or <a href="">signup to your account</a></p>
+        <p>or <a href="" onclick="signup()" id="change">signup to your account</a></p>
         </div>
         <div id="inputdata2">
         <div>
             <input type="email" id="email2" placeholder="Email">
-            <input type="password" id="password2" placeholder="Password">
+            <input type="password" id="password2" placeholder="Password"><br>
             <a href="">Have a referral code?</a>
-            <a id="continue2">CONTINUE</a>
+            <a id="continue2" type="button">CONTINUE</a>
+            <p>By creating an account, I accept the <a href="">Terms & Conditions</a> 
+                 & <a href=""> Privacy Policy</a></p>
         </div>
     </div>
     </div>
@@ -152,6 +156,16 @@
        show.setAttribute("id","loginpage")
     })
 
+
+
+    function login(){
+       event.preventDefault()
+       var show= document.querySelector("#show2")
+       var login=document.querySelector("#loginpage")||document.createElement("div")
+       login.setAttribute("id","show")
+       show.setAttribute("id","loginpage2")
+    
+    }
     document.getElementById("backtohome2").addEventListener("click",function(){
        var show= document.querySelector("#loginpage2")
        show.setAttribute("id","show2")
@@ -162,4 +176,12 @@
        login.setAttribute("id","show")
        show.setAttribute("id","loginpage2")
     })
+
+    function signup(){
+        event.preventDefault();
+        var show= document.querySelector("#show")
+       var login=document.querySelector("#loginpage2")||document.createElement("div")
+       login.setAttribute("id","show2")
+       show.setAttribute("id","loginpage")
+    }
 </script>

@@ -22,19 +22,19 @@ var city=JSON.parse(localStorage.getItem('city'))
 itemcity.innerText=city
 document.getElementById("div1").append(itemcity)
 var itemRating=document.createElement("h2")
-itemRating.innerText=pagedeta.itemRating+"  "+"|"+"  ";
+itemRating.innerText="✪"+pagedeta.itemRating+"  "+"|"+"  ";
 document.getElementById("div2").append(itemRating)
 var price=document.createElement("h2")
-price.innerText=pagedeta.itemPrice+"  "+"|"+"  ";
+price.innerText="$"+pagedeta.itemPrice+"  "+"|"+"  ";
 document.getElementById("div2").append(price)
 var time=document.createElement("h2")
-time.innerText=pagedeta.deliveryTime+""+"min";
+time.innerText="🕒"+pagedeta.deliveryTime+""+"min";
 document.getElementById("div2").append(time)
 
 var cart=document.createElement("button")
 var div67=document.createElement("div")
 cart.setAttribute("id","cart")
-cart.innerText="ADD TO CART"
+cart.innerText="🛒ADD TO CART"
 div67.append(cart)
 cart.addEventListener("click",function(){
     cartfun(pagedeta)
@@ -61,7 +61,7 @@ rec.map(function(el,index){
     var h2=document.createElement("h3")
     h2.innerText=el.itemName;
     var h22=document.createElement("h3")
-    h22.innerText=el.itemRating;
+    h22.innerText="✪"+el.itemRating;
     div1.append(h2,h22)
     var div2=document.createElement("div")
     var img=document.createElement("img");
