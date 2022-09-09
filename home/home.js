@@ -495,19 +495,19 @@ var arr=[
     }
      function card1()
      {
-      location.href="../cardpage/card1.html"
+      location.href="../cardpage/card1.html";
      }
      function card2()
      {
-      location.href="../cardpage/card2.html"
+      location.href="../cardpage/card2.html";
      } 
      function card3()
      {
-      location.href="../cardpage/card3.html"
+      location.href="../cardpage/card3.html";
      } 
      function card4()
      {
-      location.href="../cardpage/card4.html"
+      location.href="../cardpage/card4.html";
      }
 
      var a=JSON.parse(localStorage.getItem("user"));
@@ -521,9 +521,11 @@ var arr=[
     }
     function signIn()
     {
+      event.preventDefault();
       if(a==null)
       {
+        
         location.href="../index.html";
-        alert("Please signUp or login ");
+         
       }
     }
