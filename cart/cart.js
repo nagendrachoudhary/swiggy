@@ -1,6 +1,5 @@
 var itemdta =JSON.parse(localStorage.getItem('cart'))||[]
 var addData = JSON.parse(localStorage.getItem('address')) || []
-
 showcartdata(itemdta)
 
 showAddress()
@@ -132,7 +131,7 @@ function addqty(i){
     var a = JSON.parse(localStorage.getItem('cart'))
     itemdta.map(function(ele,index){
         if(i==index){
-            ele.qty = ele.qty+1;
+            ele.qty = parseInt(ele.qty)+1;
             ele.itemPrice = parseInt(ele.itemPrice)+parseInt(a[i].itemPrice)
         }
     })
@@ -144,7 +143,7 @@ var a = JSON.parse(localStorage.getItem('cart'))
 itemdta.map(function(ele,index){
     if(i==index){
         ele.itemPrice = parseInt(ele.itemPrice)-parseInt(a[i].itemPrice)
-        ele.qty = ele.qty-1;
+        ele.qty = parseInt(ele.qty)-1;
         if(ele.itemPrice==0){
             itemdta.splice(i,1)
             localStorage.setItem('cart',JSON.stringify(itemdta))
@@ -153,6 +152,8 @@ itemdta.map(function(ele,index){
 })
 showcartdata(itemdta)
 }
+
+
 function payment_mode(){
     document.querySelector('#payMode').innerText = ''
     var input = document.createElement('input')
@@ -171,4 +172,12 @@ if(e.srcElement.checked){
     
 };
 }
+
+function showInfo() {
+    var x = document.getElementById("table");
+    if (x.style.display === "none") {
+      return x.style.display = "block";
+    }
+    return x.style.display = "none";
+  }
 
