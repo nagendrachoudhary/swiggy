@@ -1,4 +1,4 @@
-
+var cart_count = JSON.parse(localStorage.getItem("cart"))||[];
 var arr = JSON.parse(localStorage.getItem("main array"))
 
 arr.sort(function(a,b){
@@ -8,7 +8,7 @@ arr.sort(function(a,b){
         return 1;}
         return 0;
 });
-
+document.getElementById("cart_count").innerText = cart_count.length||0;
 display();
 function display(){
 document.querySelector(".main").innerText="";
@@ -19,7 +19,7 @@ p1.innerText = "All offers (1543)";
 var p2 = document.createElement("p");
 p2.innerText = "All offers and deals from restaurants near you";
 restaurent.append(p1,p2);
-arr.map(function(ele,index)
+arr.map(function(ele)
 {
 var div=document.createElement("div");
 var imgdiv=document.createElement("div");
@@ -90,11 +90,22 @@ var div4=document.createElement("div");
 div4.setAttribute("id","parentofcart");
 var cart=document.createElement("button");
 cart.setAttribute("class","Addtocart");
-
-cart.innerText="Add to Cart";
+cart.innerText = (cart_count.includes(ele))?"Remove":"Add to Cart";
 cart.addEventListener("click",function()
 {
-cartfun(index);
+  if(cart.innerText==="Add to Cart"){
+cart_count.push(ele);
+localStorage.setItem("cart",JSON.stringify(cart_count));
+document.getElementById("cart_count").innerText = cart_count.length||0;
+cart.innerText = "Remove"
+cart.setAttribute("class","Remove");
+  }else if(cart.innerText==="Remove"){
+cart_count.splice(ele,1);
+localStorage.setItem("cart",JSON.stringify(cart_count));
+document.getElementById("cart_count").innerText = cart_count.length||0;
+cart.innerText = "Add to Cart";
+cart.setAttribute("class","Addtocart");
+  }
 });
 div4.append(cart);
 
