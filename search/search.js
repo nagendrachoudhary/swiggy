@@ -1,3 +1,6 @@
+alert("please search items in search Box eg.pizzas,biryani,burger,chinese,cake,icecream,North Indian,South Indian etc");
+
+
 var arr=[
 
   {
