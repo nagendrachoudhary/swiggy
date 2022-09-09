@@ -111,3 +111,9 @@
 			   j=(j+1)%word.length;
 		   }
 		   setInterval(changeText,1500);
+
+
+
+
+	
+		   

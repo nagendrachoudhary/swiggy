@@ -118,17 +118,27 @@ rec.map(function(el,index){
          var total=0;
          var div1=document.createElement("div");
          div1.setAttribute("class","prices")
+         dispalycart();
+         function dispalycart(){
     addcart.map(function(el,index){     
-         
-         
         var h3=document.createElement("h3")
          h3.innerText=el.itemName;
         var price=document.createElement("h3")
          price.innerText='$'+el.itemPrice;
-         div1.append(h3,price)
+         var deletebutton=document.createElement("h3")
+         deletebutton.innerText="remove"
+         deletebutton.addEventListener("click",function(){
+         addcart.splice(index, 1);
+          localStorage.setItem("cart",JSON.stringify(addcart))
+            div1.innerHTML="";
+            dispalycart();
+         })
+         div1.append(h3,price,deletebutton)
          document.querySelector("#cartsitems").append(div1)
          total=+total+(+el.itemPrice)
+         
        })
+      }
        var br=document.createElement("hr")
        document.querySelector("#cartsitems").append(br)
 

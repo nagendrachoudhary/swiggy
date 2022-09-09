@@ -14,8 +14,8 @@
             <div id="div1">
                 <div id="logo"><img src="https://upload.wikimedia.org/wikipedia/en/1/12/Swiggy_logo.svg" alt="logo"></div>
                 <div id="loginsingup">
-                    <div id="login"><button onclick="location.href='enter link here'" type="button">Login</button></div>
-                    <div id="singup"><button onclick="location.href='enter link here'" type="button">Sign up</button></div>
+                    <div ><button id="login">Login</button></div>
+                    <div ><button id="signup">Sign up</button></div>
                 </div>
             </div>
            <div id="div2">
@@ -101,8 +101,65 @@
     <hr>
     <div id="city">
     </div>
+
+
+    <div id="show">
+        <div id="signnames">
+        <h1 id="backtohome">X</h1>
+        <h1>SIGN UP</h1>
+        <p>or <a href="">login to your account</a></p>
+        </div>
+        <div id="inputdata">
+        <form action="form">
+            <input id="phone" type="tel" placeholder="Phone number">
+            <input id="name" type="text" placeholder="Name">
+            <input id="email" type="email" placeholder="Email">
+            <input id="password" type="password" placeholder="Password">
+            <a href="">Have a referral code?</a>
+           <button id="continue"> <a href="/home/home.html">CONTINUE</a> </button>
+        </form>
+    </div>
+    </div>
+
+
+    <div id="show2">
+        <div id="signnames2">
+        <h1 id="backtohome2">X</h1>
+        <h1>LOGIN</h1>
+        <p>or <a href="">signup to your account</a></p>
+        </div>
+        <div id="inputdata2">
+        <form action="form">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <a href="">Have a referral code?</a>
+           <button id="continue2"> <a href="/home/home.html">CONTINUE</a> </button>
+        </form>
+    </div>
+    </div>
 </body>
 </html>
 <script src="index.js"></script>
 <script>
+    document.getElementById("backtohome").addEventListener("click",function(){
+       var show= document.querySelector("#loginpage")
+       show.setAttribute("id","show")
+    })
+    document.getElementById("signup").addEventListener("click",function(){
+       var show= document.querySelector("#show")
+       var login=document.querySelector("#loginpage2")||document.createElement("div")
+       login.setAttribute("id","show2")
+       show.setAttribute("id","loginpage")
+    })
+
+    document.getElementById("backtohome2").addEventListener("click",function(){
+       var show= document.querySelector("#loginpage2")
+       show.setAttribute("id","show2")
+    })
+    document.getElementById("login").addEventListener("click",function(){
+       var show= document.querySelector("#show2")
+       var login=document.querySelector("#loginpage")||document.createElement("div")
+       login.setAttribute("id","show")
+       show.setAttribute("id","loginpage2")
+    })
 </script>
