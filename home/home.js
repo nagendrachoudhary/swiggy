@@ -9,17 +9,22 @@ var arr=[
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/jb9iyqwlhuyxyvb6zwnz",
       itemCoupon_code:"USETRY30",
       deliveryTime:"15",
-
+      itemCategory:"none",
+      qty:"1",
+      
     },
     {
       itemName: "Manohar Dairy and Restaurant",
       itemTag:"Sweets",
       itemRating:"4.3",
       itemPrice:"300",
-      itemDiscount:"30",
+      itemDiscount:"62",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/v6elbsatlbi93xeq0g3c",
       itemCoupon_code:"USETRY30",
       deliveryTime:"30",
+      itemCategory:"none",
+      qty:"1",
+
     },
     {
       itemName: "Anjani Bhojnalay",
@@ -30,36 +35,44 @@ var arr=[
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/u7hwixd7b4papoe2hwdu",
       itemCoupon_code:"USETRY30",
       deliveryTime:"30",
+      itemCategory:"none",
+      qty:"1",
     },
     {
       itemName: "Burger King",
       itemTag:"Burger",
       itemRating:"5.0",
       itemPrice:"160",
-      itemDiscount:"30",
+      itemDiscount:"70",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/yzdmieopbbypvdfybrur",
       itemCoupon_code:"USETRY30",
       deliveryTime:"25",
+      itemCategory:"BestSeller",
+      qty:"1",
     },
     {
       itemName: "Biryani By Kilo",
       itemTag:"Biryani",
       itemRating:"3.3",
       itemPrice:"350",
-      itemDiscount:"30",
+      itemDiscount:"60",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/qjlxj9scdfjn6jlytt1x",
       itemCoupon_code:"USETRY30",
       deliveryTime:"35",
+      itemCategory:"BestSeller",
+      qty:"1",
     },
     {
       itemName: "Idli & More",
       itemTag:"South Indian",
       itemRating:"3.0",
       itemPrice:"180",
-      itemDiscount:"30",
+      itemDiscount:"65",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/yti6qdbmzawis39mjfni",
       itemCoupon_code:"USETRY30",
       deliveryTime:"18",
+      itemCategory:"BestSeller",
+      qty:"1",
     },
     {
       itemName: "Rice Bowl Thai & Chinese",
@@ -70,16 +83,20 @@ var arr=[
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/tcg9zzpjyaopkhmdxgus",
       itemCoupon_code:"USETRY30",
       deliveryTime:"36",
+      itemCategory:"none",
+      qty:"1",
     },
     {
       itemName: "6 Veg Cheese Pizza",
       itemTag:"pizzas",
       itemRating:"4.9",
       itemPrice:"200",
-      itemDiscount:"30",
+      itemDiscount:"68",
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/wihgxiozd9dqpghhu4ri",
       itemCoupon_code:"USETRY30",
       deliveryTime:"40",
+      itemCategory:"BestSeller",
+      qty:"1",
     },
     {
       itemName:"Sagar Gaire - Kolar",
@@ -90,6 +107,8 @@ var arr=[
       itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/cxgudmo1mrxz7v9jnjz1",
       itemCoupon_code:"USETRY30",
       deliveryTime:"26",
+      itemCategory:"noner",
+      qty:"1",
     }, {
         itemName: "Sweet Truth - Cake and Desserts",
         itemTag:"Bakery",
@@ -99,6 +118,8 @@ var arr=[
         itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/e32026d7yxvhyu4dqqnj",
         itemCoupon_code:"USETRY30",
         deliveryTime:"30",
+        itemCategory:"BestSeller",
+        qty:"1",
       },
       {
         itemName: "Sharma & Vishnu Fast Food",
@@ -109,6 +130,8 @@ var arr=[
         itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/wsy0um42bk0ndpfjzepg",
         itemCoupon_code:"USETRY30",
         deliveryTime:"30",
+        itemCategory:"none",
+        qty:"1",
       },
       {
         itemName: "Pooja Veg Bhojnalaya",
@@ -119,6 +142,8 @@ var arr=[
         itemImage:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/dif8jhqi558dpd2udq5x",
         itemCoupon_code:"USETRY30",
         deliveryTime:"45",
+        itemCategory:"BestSeller",
+        qty:"1",
       }
   
     ];
@@ -250,7 +275,13 @@ var arr=[
   });
 }
  var addcart=JSON.parse(localStorage.getItem("cart")) || [];
- var count= JSON.parse(localStorage.getItem("cart")).length || 0;
+ if(JSON.parse(localStorage.getItem("cart"))==null)
+ {
+  count=0;
+ }
+ else{
+ var count= JSON.parse(localStorage.getItem("cart")).length;
+ }
  if(count!=0)
  {
  document.getElementById("count_cart").innerText=count;
@@ -363,5 +394,20 @@ var arr=[
       })
       display();
     }
-     
-  
+     function card1()
+     {
+      location.href="../cardpage/card1.html"
+     }
+     function card2()
+     {
+      location.href="../cardpage/card2.html"
+     } 
+     function card3()
+     {
+      location.href="../cardpage/card3.html"
+     } 
+     function card4()
+     {
+      location.href="../cardpage/card4.html"
+     }
+   

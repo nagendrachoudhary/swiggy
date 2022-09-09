@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swiggy</title>
    
-    <link rel="stylesheet" href="home.css">
-    <link rel="icon" href="swiggy.png" type="image/icon type">
+    <link rel="stylesheet" href="../home/home.css">
+    <link rel="icon" href="../home/swiggy.png" type="image/icon type">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -18,32 +18,27 @@
     <div id="navbar1">
          <div id="leftpart">
             
-            <a href="home.html"><img src="swiggy.png" alt="logo"></a>
+            <a href="home.html"><img src="../home/swiggy.png" alt="logo"></a>
             <h4 id="location"></h4>
             
          </div>
          <div id="rightpart">
                 <a id="search" href="../search/search.html"><i class="fa-solid fa-magnifying-glass"></i></a>
-                <a href="../offers/offers.html"> <img id="discountimg" src="discount.png" alt="discount"> Offers</a>
-                <a href=""> <img id="help" src="support.png" alt="">  Help</a>
-                <a href=""> <img  id="userlogin" src="user-interface.png" alt="">Sign In</a>
+                <a href="../offers/offers.html"><img id="discountimg" src="../home/discount.png" alt="discount"> Offers</a>
+                <a href=""> <img id="help" src="../home/support.png" alt="">  Help</a>
+                <a href=""> <img  id="userlogin" src="../home/user-interface.png" alt="">Sign In</a>
                 <a id="navcart" href="../cart/cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
          </div>
         
     </div>
 
-    <div id="card">
-         <div><img src="cwbqaumccjyifi90c9e1.jpg" onclick="card1()" alt="one"> </div> 
-         <div><img src="oxe97jexxbnxqtbhg2zo (1).webp" onclick="card2()" alt="two"></div>
-         <div><img src="dpqcjrxwruipnt1wyqnh (1).webp" onclick="card3()" alt="three"></div>
-         <div><img src="yparhmxrby5lv0ubsel4 (1).webp" onclick="card4()" alt="four"></div>
-    </div>
+    
 
     <div id="navbar2">
 
         <div id="leftofnav2">
 
-            <h1>545 restaurant</h1>
+            <h1>Chinese</h1>
             
          </div>
 
@@ -108,5 +103,18 @@
 </body>
 </html>
 
-<script src="home.js" ></script>
+<script src="../home/home.js" ></script>
 <script src="https://kit.fontawesome.com/b926e1845e.js" crossorigin="anonymous"></script>
+
+<script>
+    var new_arr=[];
+  arr.map(function(ele){
+  if(ele.itemTag=="chinese")
+  {
+   new_arr.push(ele);
+  }
+  });
+  arr=new_arr;
+  display();
+
+</script>
