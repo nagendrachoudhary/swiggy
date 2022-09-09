@@ -167,7 +167,6 @@ function payment_mode(){
 }
 function open_card(e){
 if(e.srcElement.checked){
-    showInfo()
     window.location.href = './card.html'
 }else{
     
