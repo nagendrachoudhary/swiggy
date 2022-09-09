@@ -309,7 +309,7 @@ img:hover{
  
     height: 50px;
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     margin-top: 60px;
     margin-left: 20px;
     
@@ -328,7 +328,7 @@ img:hover{
     display: flex;
     width: 50%;
     margin: auto;
-    margin-bottom: 500px;
+    margin-bottom: 10px;
 }
 #dish_tag>div>img{
     width:100%;
@@ -340,8 +340,13 @@ img:hover{
     font-weight: bold;
 }
 #search_icon{
-    margin-left:-40px;
-       
+    height: 50px;
+    width: 100px;
+    margin-left: -4px;
+    background-color:lightblue;
+    font-weight: bold;
+    font-size: small;
+    cursor: pointer;
 }
 #rightpart>#search{
     color: red;

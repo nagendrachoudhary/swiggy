@@ -364,3 +364,30 @@ document.getElementById("count_cart").setAttribute("class","count");
     display();
   }
    
+ 
+var access=arr;
+ function serfun()
+ {
+  var temp=[];
+  var a=document.getElementById("mid_search").value;
+  var check=false;
+
+  arr.map(function(ele)
+  {
+    if(a==ele.itemTag)
+    {
+      check=true;
+      temp.push(ele);
+    }
+  });
+  if(check==true)
+  {
+  arr=temp;
+  display();
+  arr=access;
+  }
+  else{
+    alert("This item is not available please search another item");
+ }
+
+}
