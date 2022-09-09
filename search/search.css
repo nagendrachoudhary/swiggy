@@ -351,3 +351,6 @@ img:hover{
 #rightpart>#search{
     color: red;
 }
+#userlogin{
+    margin-right:-30px;
+}
