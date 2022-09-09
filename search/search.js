@@ -387,7 +387,13 @@ var access=arr;
   arr=access;
   }
   else{
+    if(a=="")
+    {
+      alert("please search some item on search box");
+    }
+    else{
     alert("This item is not available please search another item");
+    }
  }
 
 }
