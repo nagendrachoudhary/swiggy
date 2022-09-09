@@ -87,8 +87,6 @@ background-color: #282c3f;
     grid-template-columns: repeat(3,1fr);
  }
  #products{
-    border-left: 2px solid black;
-    border-right: 2px solid black;
 
     overflow:scroll;
     height: 500px;
@@ -100,7 +98,7 @@ background-color: #282c3f;
  }
  #div3{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(2,1fr);
     margin-left: 30px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
@@ -108,9 +106,9 @@ background-color: #282c3f;
  }
 #div3 img{
     width: 200px;
-    height: 200px;
-    align-items: flex-end;
-    cursor: pointer;
+height: 200px;
+cursor: pointer;
+display: grid;
 }
 #cart{
    margin-top: 25px;
@@ -137,6 +135,10 @@ background-color: #282c3f;
 }
 #cartimg{
     width: 100%;
+}
+#cartsitems{
+    align-items: flex-end;
+    
 }
 #cartsitems div>p{
    margin: 0%;

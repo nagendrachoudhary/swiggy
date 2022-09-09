@@ -93,7 +93,7 @@ rec.map(function(el,index){
          display()
     }
    function display(){
-   if(addcart.length===0){
+   if(addcart.length==='null'){
     var h1=document.createElement("h1");
     h1.innerText="Cart Empty"
     document.querySelector("#cartsitems").append(h1)
@@ -132,6 +132,7 @@ rec.map(function(el,index){
           localStorage.setItem("cart",JSON.stringify(addcart))
             div1.innerHTML="";
             dispalycart();
+            changeno();
          })
          div1.append(h3,price,deletebutton)
          document.querySelector("#cartsitems").append(div1)
