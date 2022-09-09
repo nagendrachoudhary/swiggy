@@ -354,3 +354,10 @@ img:hover{
 #userlogin{
     margin-right:-30px;
 }
+#navbar1{
+    position: sticky;
+    top:0;
+    background-color: white;
+    width: 100%;
+    z-index: 99;
+}
