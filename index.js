@@ -1,5 +1,4 @@
-       
-        document.getElementById("citys").addEventListener("click",addcitys)
+ document.getElementById("citys").addEventListener("click",addcitys)
         function addcitys(){
             var city=document.querySelector("input").value
             localStorage.setItem("city",JSON.stringify(city))
@@ -111,3 +110,58 @@
 			   j=(j+1)%word.length;
 		   }
 		   setInterval(changeText,1500);
+
+
+
+var userdata=JSON.parse(localStorage.getItem("userdata"))||[]
+// signup function 
+document.querySelector("#continue").addEventListener("click",function(){
+	event.preventDefault()
+	var username=document.querySelector("#name").value
+	var useremail=document.querySelector("#email").value
+	var userphone=document.querySelector("#phone").value
+	var userpassword=document.querySelector("#password").value
+	var user={
+		"username":username,
+		"useremail":useremail,
+		"userphone":userphone,
+		"userpassword":userpassword
+	}
+	console.log(user)
+	userdata.push(user)
+	localStorage.setItem("userdata",JSON.stringify(userdata) )
+	if(user.username.length>0&&user.useremail.length>0&&user.userpassword.length>0&&user.userphone.length>0){
+		location.href="./home/home.html"
+		localStorage.setItem("user",JSON.stringify(user));
+	}
+	if(user.username.length==0||user.useremail.length==0||user.userpassword.length==0||user.userphone.length==0){
+		alert("Enter all details thank you")
+	}	
+})
+
+
+// login part
+document.querySelector("#continue2").addEventListener("click",function(){
+	event.preventDefault()
+	var useremail=document.querySelector("#email2").value
+	var userpassword=document.querySelector("#password2").value
+	var ans=userdata.filter(function(el,ind){
+		if(el.useremail===useremail){
+		   if(el.userpassword===userpassword){
+			return el
+		   }
+		}
+	})
+	if(ans.length==0){
+	alert("worng password")
+    }
+	if(ans.length>0){
+        localStorage.setItem("user",JSON.stringify(ans));
+		location.href="./home/home.html"
+	}
+	
+
+
+		
+	
+})   

@@ -141,7 +141,7 @@ var arr=[
     document.getElementById("location").innerText=ans;
   }
    
-display();
+ 
 
     function display(){
     document.getElementById("itemsdetails").innerText="";
@@ -364,3 +364,55 @@ document.getElementById("count_cart").setAttribute("class","count");
     display();
   }
    
+ 
+var access=arr;
+ function serfun()
+ {
+  var temp=[];
+  var a=document.getElementById("mid_search").value;
+  var check=false;
+
+  arr.map(function(ele)
+  {
+    if(a==ele.itemTag)
+    {
+      check=true;
+      temp.push(ele);
+    }
+  });
+  if(check==true)
+  {
+  arr=temp;
+  display();
+  arr=access;
+  }
+  else{
+    if(a=="")
+    {
+      alert("please search some item on search box ");
+    }
+    else{
+    alert("This item is not available please search another item");
+    }
+ }
+
+}
+
+
+var a=JSON.parse(localStorage.getItem("user"));
+console.log(a);
+if(a!==null)
+{
+ document.querySelector("#user").innerText=a.username;
+}
+else{
+  document.querySelector("#user").innerText="Sign In";
+}
+function signIn()
+{
+  if(a==null)
+  {
+    location.href="../index.html";
+    alert("Please signUp or login ");
+  }
+}

@@ -188,8 +188,168 @@ input:hover{
 }
 #login button:hover{
     color: #fc8019;
+    
 }
 button{
     cursor: pointer;
     
+}
+
+
+#loginpage{
+    width: 550px;
+    height: 700px;
+    /* border: 2px solid red; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    position:absolute;
+    transition: 2s;
+    top:0px;
+    right:0px
+    
+    
+}
+#signnames p ,h1{
+    margin: 20px 70px;
+    
+    
+}
+#show{
+    width: 500px;
+    height: 600px;
+    /* border: 2px solid red */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position:absolute;
+    transition: 2s;
+    top:-600px;
+    right:0px
+    
+    
+}
+#backtohome{
+    margin-left: 30px;
+    color: brown;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+#backtohome:hover{
+    color: #fc8019;
+}
+form{
+    display: grid;
+    justify-content: center;
+    
+}
+#inputdata{
+    text-align: center;
+    margin: 20px;
+    margin: auto;
+}
+form input{
+    width: 400px;
+    height: 70px;
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#continue,#continue2{
+    width: 100%;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    height: 50px;
+    font-size: larger;
+    color: white;
+    background-color: #fc8019;
+}
+
+
+#login{
+    background-color: white;
+    color: black;
+    border-color: white;
+    border-radius: 10px;
+}
+#signup{
+    background-color: black;
+    color: white;
+    border-color: white;
+    border-radius: 10px;
+}
+
+
+
+#loginpage2{
+    width: 550px;
+    height: 700px;
+    /* border: 2px solid red; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    
+    position:absolute;
+    transition: 2s;
+    top:0px;
+    right:0px
+    
+    
+}
+#signnames2 p ,h1{
+    margin: 20px 70px;
+    
+}
+#show2{
+    width: 500px;
+    height: 600px;
+    /* border: 2px solid red; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    align-items: center;
+    position:absolute;
+    transition: 2s;
+    top:-700px;
+    right: 0px;
+    
+}
+#backtohome2{
+    margin-left: 30px;
+    color: brown;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+#backtohome2:hover{
+    color: #fc8019;
+}
+form{
+    display: grid;
+    justify-content: center;
+}
+#inputdata2{
+    text-align: center;
+    margin: auto;
+}
+form input{
+    width: 400px;
+    height: 70px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+form button{
+    width: 100%;
+    display: grid;
+    align-items: center;
+    margin: 20px 0px;
+}
+input{
+    width: 400px;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 2px;
+}
+#change{
+   
+    cursor: pointer;
+}
+a{
+    color: #fc8019;
 }

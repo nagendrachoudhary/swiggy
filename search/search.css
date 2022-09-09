@@ -11,7 +11,8 @@
     justify-content:space-around;
      font-weight: bold;
     color:whitesmoke;
-    
+    width: 80%;
+    margin: auto;
     
 }
 #location:hover{
@@ -38,7 +39,7 @@ margin-left: -3px;
     font-size: large;
 }
 #leftpart>a>img{
-    width: 100%;
+    width: 130%;
     height: 100%;
     margin-top: 15px;
  
@@ -308,7 +309,7 @@ img:hover{
  
     height: 50px;
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     margin-top: 60px;
     margin-left: 20px;
     
@@ -318,8 +319,38 @@ img:hover{
     width: 800px;
     color: grey;
     text-align:start;
-    padding-left:8px;
+    padding-left:8px;    
 
-    
+}
 
+
+#dish_tag{
+    display: flex;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+#dish_tag>div>img{
+    width:100%;
+}
+#below_search>h2{
+    margin-left: 380px;
+    margin-bottom: 20px;
+    color:rgb(4, 4, 57);
+    font-weight: bold;
+}
+#search_icon{
+    height: 50px;
+    width: 100px;
+    margin-left: -4px;
+    background-color:lightblue;
+    font-weight: bold;
+    font-size: small;
+    cursor: pointer;
+}
+#rightpart>#search{
+    color: red;
+}
+#userlogin{
+    margin-right:-30px;
 }

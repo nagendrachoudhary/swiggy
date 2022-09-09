@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #main{
+        border: 2px solid green;
+        border-radius: 8px;
+        width: 30%;
+        margin: auto;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    input{
+        width: 50%;
+        height: 50px;
+        font-size: 40px;
+    }
+    button{
+        padding: 15px;
+        font-size: 25px;
+        font-weight: 600;
+        background-color: lightcoral;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div id="main">
+        <input type="Number" name="otp" placeholder="Enter Otp ">
+        <button id="submit" onclick="verify_otp()">Verify Otp</button>
+    </div>
+</body>
+</html>
+<script>
+    var otp = localStorage.getItem('otp');
+    function verify_otp(){
+      var a =  document.querySelector('input').value
+      if(a==''){
+        alert('enter OTP')
+      }if(a==otp){
+        alert('Payment Successful')
+        window.location.href = '/home/home.html'
+      }else{
+        alert('Invalid Otp')
+      }
+
+    }
+
+</script>
