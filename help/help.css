@@ -78,7 +78,7 @@ margin-top: 30px;
     font-weight: bolder;
 }
 #legal>p{
-    color: white;
+    color: black;
     font-size: larger;
     font-weight: bolder;
 }
@@ -133,18 +133,12 @@ height: 100%;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 #part_on{
-    width: 80%;
-    height: 100%;
     padding: 0 50px;
 }
 #legal{
-    width: 80%;
-    height: 100%;
     padding: 0 50px;
 }
 #faq{
-    width: 80%;
-    height: 100%;
     padding: 0 50px;
 }
 #white_background>div:first-child>button{
@@ -188,4 +182,10 @@ background-color: white;
 }
 #part_on{
     display: block;
+}
+#legal{
+    display: none;
+}
+#faq{
+    display: none;
 }
