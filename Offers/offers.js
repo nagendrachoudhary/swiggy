@@ -19,14 +19,19 @@ p1.innerText = "All offers (1543)";
 var p2 = document.createElement("p");
 p2.innerText = "All offers and deals from restaurants near you";
 restaurent.append(p1,p2);
-arr.map(function(ele)
+arr.map(function(ele,index)
 {
 var div=document.createElement("div");
 var imgdiv=document.createElement("div");
 var img=document.createElement("img");
 img.setAttribute("src",ele.itemImage);
 img.setAttribute("alt","1");
-
+img.addEventListener("click",function()
+{
+  var product=arr[index];
+  localStorage.setItem("product_details",JSON.stringify(product));
+  location.href='../productdetails/productdetails.html';
+})
 imgdiv.append(img);
 
 var div1=document.createElement("div");
@@ -114,4 +119,11 @@ document.querySelector(".main").append(div);
 
 });
 }
-
+var ans=JSON.parse(localStorage.getItem("city")) || "";
+    if(ans.length==0)
+    {
+      document.getElementById("location").innerText="Maharana Pratap Square Delhi";
+    }
+    else{
+      document.getElementById("location").innerText=ans;
+    }
