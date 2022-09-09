@@ -410,4 +410,21 @@ var arr=[
      {
       location.href="../cardpage/card4.html"
      }
-   
+
+     var a=JSON.parse(localStorage.getItem("user"));
+    console.log(a);
+    if(a!==null)
+    {
+     document.querySelector("#user").innerText=a.username;
+    }
+    else{
+      document.querySelector("#user").innerText="Sign In";
+    }
+    function signIn()
+    {
+      if(a==null)
+      {
+        location.href="../index.html";
+        alert("Please signUp or login ");
+      }
+    }
