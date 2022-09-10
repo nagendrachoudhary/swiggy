@@ -16,11 +16,11 @@
 <body>
     <div id="navbar" class="flex bg-white">
         <div class="flex1">
-            <img src="/cart/swiggy.png" alt="" srcset="">
+            <img id="swiggylogo" src="/cart/swiggy.png" alt="" srcset=""onclick="location.href='/home/home.html'">
             <span>SECURE CHECKOUT</span>
         </div>
         <div class="flex r__class">
-            <p onclick="location.href='/help/help.html'">Help </p>
+            <p onclick="location.href='/help/help.html'"> <img id="help" src="/home/support.png" alt=""> Help</p>
             <!-- <p class="hover__btn">Profile</p>
             <div class="hover__card">
               <ul>
@@ -108,7 +108,7 @@
             </div>
             <div class="coupon my-3">
               <img id="discountimg" src="/home/discount.png" alt="discount" > Available offer "swiggy30"
-              <input type="text"  class="form-control text-center mt-2" placeholder="Enter Coupen Code">
+              <input type="text" id="coupon"  class="form-control text-center mt-2" placeholder="Enter Coupen Code" onblur="applycoupen()">
             </div>
             <p>Bill details</p>
             <div class="flex_sb">

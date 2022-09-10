@@ -48,6 +48,7 @@
       }if(a==otp){
         alert('Payment Successful')
         window.location.href = '/home/home.html'
+        localStorage.clear('cart')
       }else{
         alert('Invalid Otp')
       }
