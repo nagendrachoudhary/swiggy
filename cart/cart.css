@@ -226,9 +226,9 @@ margin-bottom: 1.5rem;
     padding-top: 1.5rem;
 }
 .hover__card{
-    height: 100px;
-    width: 100px;
-    border: 1px solid;
+    height: 15rem;
+    width: 12rem;
+    /* border: 1px solid; */
     position: absolute;
     right: 0;
     top: 27px;
@@ -246,4 +246,53 @@ margin-bottom: 1.5rem;
 }
 .hover__btn{
     cursor: pointer;
+}
+li{
+    margin: 0.2rem;
+    cursor: pointer;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropbtn{
+    border: none;
+    background-color: white;
+  }
+  #navbar p,span,button{
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+  #navbar{
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+  }
+  #discountimg{
+    width:18px;
+    height:18px; 
+    
 }

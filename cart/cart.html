@@ -20,11 +20,26 @@
             <span>SECURE CHECKOUT</span>
         </div>
         <div class="flex r__class">
-            <p>Help</p>
-            <p class="hover__btn">Profile</p>
+            <p onclick="location.href='/help/help.html'">Help </p>
+            <!-- <p class="hover__btn">Profile</p>
             <div class="hover__card">
-  
-            </div>
+              <ul>
+                <li>Orders</li>
+                <li>Swiggy one</li>
+                <li>Fevourites</li>
+                <li>Logout</li>
+              </ul>
+            </div> -->
+            <div class="dropdown">
+              <button class="dropbtn"><i class="fa fa-user"></i>  Profile 
+              </button>
+              <div class="dropdown-content">
+                <a href="#">Orders</a>
+                <a href="#">Swiggy one</a>
+                <a href="#">Fevourites</a>
+                <a href="/index.html">Logout</a>
+              </div>
+            </div> 
           </div>
     </div>
     <div id="content">
@@ -92,7 +107,8 @@
               </div>
             </div>
             <div class="coupon my-3">
-              <input type="text"  class="form-control text-center" placeholder="Enter Coupen Code">
+              <img id="discountimg" src="/home/discount.png" alt="discount" > Available offer "swiggy30"
+              <input type="text"  class="form-control text-center mt-2" placeholder="Enter Coupen Code">
             </div>
             <p>Bill details</p>
             <div class="flex_sb">
