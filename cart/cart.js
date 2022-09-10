@@ -12,6 +12,7 @@ function total_value(arr){
           document.getElementById('total_value').innerText = '₹'+total_amt
           document.getElementById('final_Amt').innerText = '₹'+(total_amt+20)
       }, 200);
+      return total_amt
   }
 
 function showcartdata(obj) {
@@ -119,14 +120,20 @@ function showAddress() {
 }
 
 function removeadd(i){
+    
+    if(confirm('Are you sure you want to remove address')==true){
     document.querySelector('#address').innerHTML=''
 addData.splice(i,1)
 localStorage.setItem('address',JSON.stringify(addData))
 showAddress()
 window.location.reload()
+    }else{
+        return
+    }
 }
 
 function addqty(i){
+    flag=0
     document.getElementById('totalcart').innerText = ''
     var a = JSON.parse(localStorage.getItem('cart'))
     itemdta.map(function(ele,index){
@@ -138,6 +145,7 @@ function addqty(i){
     showcartdata(itemdta)
 }
 function removeqty(i){
+    flag = 0
 document.getElementById('totalcart').innerText = ''
 var a = JSON.parse(localStorage.getItem('cart'))
 itemdta.map(function(ele,index){
@@ -179,5 +187,19 @@ function showInfo() {
       return x.style.display = "block";
     }
     return x.style.display = "none";
+  }
+var flag = 0
+  function applycoupen(){
+    console.log();
+    var a =document.getElementById('coupon').value
+    if(a==''||a==undefined){
+        alert('enter coupen')
+    }else if(a=='swiggy30'&& flag==0){
+            document.getElementById('final_Amt').innerText = ''
+            document.getElementById('final_Amt').innerText = '₹'+((total_value(itemdta)*0.7)+20)
+            flag==1
+    }else{
+        alert('Invalid coupon')
+    }
   }
 
