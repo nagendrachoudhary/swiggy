@@ -276,3 +276,11 @@ height: 100%;
 #bottom>div>button:hover{
     transform: scale(1.2,1.2);
 }
+#userLogin{
+    width:18px;
+    height:18px;
+   
+}
+#userLogin{
+    margin-right:-80px;
+}
