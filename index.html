@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <div id="black_film_box"></div>
     <div id="top">
         <div id="first">
             <div id="div1">
                 <div id="logo"><img src="https://upload.wikimedia.org/wikipedia/en/1/12/Swiggy_logo.svg" alt="logo"></div>
                 <div id="loginsingup">
-                    <div ><button id="login">Login</button></div>
-                    <div ><button id="signup">Sign up</button></div>
+                    <div ><button id="login"  onclick="login()">Login</button></div>
+                    <div ><button id="signup" onclick="signup()">Sign up</button></div>
                 </div>
             </div>
            <div id="div2">
@@ -103,85 +104,89 @@
     </div>
 
 
-    <div id="show">
-        <div id="signnames">
-        <h1 id="backtohome">X</h1>
-        <h1>SIGN UP</h1>
-        <p>or <a onclick="login()" href="" id="change">login to your account</a></p>
+ 
+    <div  style="display:flex; justify-content:flex-end;">
+        <div id="sliding_box">
+            <div id="internal_box">
+                <svg id="x_mark" onClick="put_login_in()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+                <div id="upper_box">
+                    <div id="left_side">
+                        <h1>Login</h1>
+                        <p>or <a onClick="signup()" style="color:orange">create an account</a></p>
+                    </div>
+                    <div id="right_side">
+                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Image-login_btpq7r"/>
+                    </div>
+                </div>
+                <div id="phone_number_box">
+                    <input type="email" class="phone_number_input_box" id="useremail" placeholder="Enter your email"/>
+                    <input type="password" class="phone_number_input_box" id="userpassword" placeholder="Enter your password"/>
+                </div>
+                <button class="loginbutton" id="loginsave"  >Login</button>
+                <p>By clicking on Login, I accept the <a style="color:black;" href="https://www.swiggy.com/terms-and-conditions">Terms & Conditions</a> & <a style="color:black" href="https://www.swiggy.com/privacy-policy">Privacy Policy</a></p>
+            </div>
         </div>
-        <div id="inputdata">
-        <div id="signupform">
-            <input id="phone" type="tel" placeholder="Phone number">
-            <input id="name" type="text" placeholder="Name">
-            <input id="email" type="email" placeholder="Email">
-            <input id="password" type="password" placeholder="Password"><br>
-            <a href="">Have a referral code?</a>
-           <a id="continue"href="./home/home.html">CONTINUE</a>
-           <p>By creating an account, I accept the <a href="">Terms & Conditions</a> 
-            & <a href=""> Privacy Policy</a></p>
+       </div>
+    
+       <div  style="display:flex; justify-content:flex-end;">
+        <div id="second_sliding_box">
+            <div id="internal_box">
+                <svg id="x_mark" onClick="put_signup_in()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+                <div id="upper_box">
+                    <div id="left_side">
+                        <h1>SignUp</h1>
+                        <p>or <a style="color:orange" onClick="login()">login to your account</a></p>
+                    </div>
+                    <div id="right_side">
+                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Image-login_btpq7r"/>
+                    </div>
+                </div>
+                <div id="phone_number_box">
+                    <input class="phone_number_input_box" id="phoneno" placeholder="Phone Number" type="tel"/>
+                </div>
+                <div id="name_box">
+                    <input id="name_input_box" placeholder="Name" type="text"/>
+                </div>
+                <div id="email_box">
+                    <input id="email_input_box" placeholder="Email" type="email"/>
+                </div>
+                <div id="password_box">
+                    <input id="password_input_box" placeholder="Password" type="password"/>
+                </div>
+                <div id="referral_box">
+                    <input id="referral_input_box" placeholder="Referral code"/>
+                </div>
+                <button id="referral_code_button" onclick="display_ref_code_box()">Have a referral code?</button>
+                <button class="loginbutton" id="signupsave" onclick="">Continue</button>
+                <p>By clicking on Login, I accept the <a style="color:black;" href="https://www.swiggy.com/terms-and-conditions">Terms & Conditions</a> & <a style="color:black" href="https://www.swiggy.com/privacy-policy">Privacy Policy</a></p>
+            </div>
         </div>
-    </div>
-    </div>
-
-
-    <div id="show2">
-        <div id="signnames2">
-        <h1 id="backtohome2">X</h1>
-        <h1>LOGIN</h1>
-        <p>or <a href="" onclick="signup()" id="change">signup to your account</a></p>
+       </div>
+    
+       
+    
+       <div  style="display:flex; justify-content:flex-end;">
+        <div id="complete_signup_otp_sliding_box">
+            <div id="internal_box">
+                <svg id="left_mark_box" onclick="put_enter_otp_for_sign_up_to_side_and_run_sign_up()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M109.3 288L480 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-370.7 0 73.4-73.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288z"/></svg>            <div id="upper_box">
+                    <div id="left_side">
+                        <h1>Sign up</h1>
+                        <p>or <a style="color:orange" onClick="login()">login to your account</a></p>
+                    </div>
+                    <div id="right_side">
+                        <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Image-login_btpq7r"/>
+                    </div>
+                </div>
+                <div id="phone_number_box">
+                    <input class="phone_number_input_box" placeholder="Enter email "/>
+                </div>
+                
+                    <input id="otp_input_box" placeholder="password"/>
+                </div>
+                <button onclick="location.href='./home/home.html'" id="verify_otp_button" >VERIFY OTP</button>
+            </div>
         </div>
-        <div id="inputdata2">
-        <div>
-            <input type="email" id="email2" placeholder="Email">
-            <input type="password" id="password2" placeholder="Password"><br>
-            <a href="">Have a referral code?</a>
-            <a id="continue2" type="button">CONTINUE</a>
-            <p>By creating an account, I accept the <a href="">Terms & Conditions</a> 
-                 & <a href=""> Privacy Policy</a></p>
-        </div>
-    </div>
-    </div>
+       </div>
 </body>
 </html>
 <script src="index.js"></script>
-<script>
-    document.getElementById("backtohome").addEventListener("click",function(){
-       var show= document.querySelector("#loginpage")
-       show.setAttribute("id","show")
-    })
-    document.getElementById("signup").addEventListener("click",function(){
-       var show= document.querySelector("#show")
-       var login=document.querySelector("#loginpage2")||document.createElement("div")
-       login.setAttribute("id","show2")
-       show.setAttribute("id","loginpage")
-    })
-
-
-
-    function login(){
-       event.preventDefault()
-       var show= document.querySelector("#show2")
-       var login=document.querySelector("#loginpage")||document.createElement("div")
-       login.setAttribute("id","show")
-       show.setAttribute("id","loginpage2")
-    
-    }
-    document.getElementById("backtohome2").addEventListener("click",function(){
-       var show= document.querySelector("#loginpage2")
-       show.setAttribute("id","show2")
-    })
-    document.getElementById("login").addEventListener("click",function(){
-       var show= document.querySelector("#show2")
-       var login=document.querySelector("#loginpage")||document.createElement("div")
-       login.setAttribute("id","show")
-       show.setAttribute("id","loginpage2")
-    })
-
-    function signup(){
-        event.preventDefault();
-        var show= document.querySelector("#show")
-       var login=document.querySelector("#loginpage2")||document.createElement("div")
-       login.setAttribute("id","show2")
-       show.setAttribute("id","loginpage")
-    }
-</script>

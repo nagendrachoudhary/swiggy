@@ -115,12 +115,12 @@
 
 var userdata=JSON.parse(localStorage.getItem("userdata"))||[]
 // signup function 
-document.querySelector("#continue").addEventListener("click",function(){
+document.querySelector("#signupsave").addEventListener("click",function(){
 	event.preventDefault()
-	var username=document.querySelector("#name").value
-	var useremail=document.querySelector("#email").value
-	var userphone=document.querySelector("#phone").value
-	var userpassword=document.querySelector("#password").value
+	var username=document.querySelector("#name_input_box").value
+	var useremail=document.querySelector("#email_input_box").value
+	var userphone=document.querySelector("#phoneno").value
+	var userpassword=document.querySelector("#password_input_box").value
 	var user={
 		"username":username,
 		"useremail":useremail,
@@ -129,39 +129,115 @@ document.querySelector("#continue").addEventListener("click",function(){
 	}
 	console.log(user)
 	userdata.push(user)
-	localStorage.setItem("userdata",JSON.stringify(userdata) )
-	if(user.username.length>0&&user.useremail.length>0&&user.userpassword.length>0&&user.userphone.length>0){
-		location.href="./home/home.html"
-		localStorage.setItem("user",JSON.stringify(user));
-	}
+	localStorage.setItem("userdata",JSON.stringify(userdata))
 	if(user.username.length==0||user.useremail.length==0||user.userpassword.length==0||user.userphone.length==0){
 		alert("Enter all details thank you")
 	}	
+    else{
+		put_enter_otp_to_side_and_run_login()
+	}
+	
 })
 
 
 // login part
-document.querySelector("#continue2").addEventListener("click",function(){
+document.querySelector("#loginsave").addEventListener("click",login2)
+function login2(){
 	event.preventDefault()
-	var useremail=document.querySelector("#email2").value
-	var userpassword=document.querySelector("#password2").value
-	var ans=userdata.filter(function(el,ind){
-		if(el.useremail===useremail){
-		   if(el.userpassword===userpassword){
-			return el
-		   }
+	var useremail=document.querySelector("#useremail").value
+	var userpassword=document.querySelector("#userpassword").value
+	ans=userdata.filter(function(el,i){
+		if(el.useremail==useremail){
+			if(el.userpassword==userpassword){
+				return el
+				
+			}
 		}
+		
 	})
+	if(ans.length!=0){
+	localStorage.setItem("user",JSON.stringify(ans))
+	location.href="./home/home.html"}
 	if(ans.length==0){
-	alert("worng password")
-    }
-	if(ans.length>0){
-        localStorage.setItem("user",JSON.stringify(ans));
-		location.href="./home/home.html"
+		alert("worng password")
 	}
 	
 
 
 		
 	
-})   
+}
+
+
+
+function put_enter_otp_to_side_and_run_login(){
+	login();
+	//document.getElementById("otp_sliding_box").style.right = "-506px";
+}
+
+function put_enter_otp_for_sign_up_to_side_and_run_sign_up(){
+	signup();
+	document.getElementById("complete_signup_otp_sliding_box").style.right = "0px";
+}
+
+function put_sign_up_otp_box_to_right(){
+	document.getElementById("complete_signup_otp_sliding_box").style.right = "0px";
+}
+
+function bring_enter_otp_sliding_box(){
+	document.getElementById("otp_sliding_box").style.right = "0px";
+}
+
+function display_ref_code_box(){
+	document.getElementById("referral_code_button").style.display = "none";
+	document.getElementById("referral_box").style.display = "block";
+}
+
+function put_login_in(){
+	document.getElementById("sliding_box").style.transition = "0.5s";
+	document.getElementById("sliding_box").style.right = "-506px";
+
+	document.getElementById("black_film_box").style.display = "none";
+}   
+
+function login(){
+
+	document.getElementById("complete_signup_otp_sliding_box").style.right = "-506px";
+
+	document.getElementById("black_film_box").style.display = "block";
+
+	var signupele = document.getElementById("second_sliding_box");
+	var styles = window.getComputedStyle(signupele) || signupele.currentStyle; 
+	var right_value = styles.right;
+	if(right_value != "-506px"){
+		document.getElementById("sliding_box").style.transition = "0s";
+		document.getElementById("sliding_box").style.right = "0px";
+		document.getElementById("second_sliding_box").style.right = "-506px";
+	} else{
+		document.getElementById("sliding_box").style.right = "0px";
+	}
+}
+
+function signup(){
+
+	document.getElementById("black_film_box").style.display = "block";
+
+	var loginele = document.getElementById("sliding_box");
+	var styles = window.getComputedStyle(loginele) || loginele.currentStyle; 
+	var right_value = styles.right;
+	if(right_value != "-506px"){
+		document.getElementById("second_sliding_box").style.transition = "0s";
+		document.getElementById("second_sliding_box").style.right = "0px";
+		document.getElementById("sliding_box").style.right = "-506px";
+	} else{
+		document.getElementById("second_sliding_box").style.right = "0px";
+	}
+}
+
+function put_signup_in(){
+	document.getElementById("second_sliding_box").style.transition = "0.5s";
+	document.getElementById("second_sliding_box").style.right = "-506px";
+
+	document.getElementById("black_film_box").style.display = "none";
+}
+

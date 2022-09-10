@@ -14,6 +14,15 @@ display: grid;
 grid-template-columns: repeat(2,1fr);
 
 }
+#login{
+    background-color: white;
+    color:black;
+    border: #fff;
+}
+#signup{
+    background-color: black;
+    color: #fff;
+}
 #second img{
 width: 100%;
 height: 100%;
@@ -196,160 +205,218 @@ button{
 }
 
 
-#loginpage{
-    width: 550px;
-    height: 700px;
-    /* border: 2px solid red; */
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: white;
-    position:absolute;
-    transition: 2s;
-    top:0px;
-    right:0px
+#internal_box{
+            
+    width:434px;
+    padding-left: 40px;
+    padding-right:32px;
+    padding-top: 20px;
     
-    
+    height:100vh;
+
 }
-#signnames p ,h1{
-    margin: 20px 70px;
-    
-    
+
+#left_side{
+    width:50%;
 }
-#show{
-    width: 500px;
-    height: 600px;
-    /* border: 2px solid red */
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    position:absolute;
-    transition: 2s;
-    top:-600px;
-    right:0px
-    
-    
+
+#right_side{
+    width:50%;
 }
-#backtohome{
-    margin-left: 30px;
-    color: brown;
-    margin-bottom: 50px;
-    margin-top: 40px;
+.loginbutton{
+    width:100%;
+    background-color: orange;
+    color:white;
+    border: 0px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#phone_number_box{
+    width:434px;
+    border: 1px solid #d4d5d9;
+}
+
+.phone_number_input_box{
+    width:394px;
+    margin-left: 20px;
+    margin-top: 20px;
+    outline:none;
+    border:none;
+    background-color: transparent;
+    line-height: 25px;
+    border: 1px solid #d4d5d9;
+}
+
+#name_box{
+    width:434px;
+    border: 1px solid #d4d5d9;
+    border-top: none;
+}
+
+#name_input_box{
+    width:394px;
+    margin-left: 20px;
+    margin-top: 20px;
+    outline:none;
+    border:none;
+    background-color: transparent;
+    line-height: 25px;
+}
+
+#email_box{
+    width:434px;
+    border: 1px solid #d4d5d9;
+    border-top: none;
+}
+
+#email_input_box{
+    width:394px;
+    margin-left: 20px;
+    margin-top: 20px;
+    outline:none;
+    border:none;
+    background-color: transparent;
+    line-height: 25px;
+}
+
+#password_box{
+    width:434px;
+    border: 1px solid #d4d5d9;
+    border-top: none;
+}
+
+#password_input_box{
+    width:394px;
+    margin-left: 20px;
+    margin-top: 20px;
+    outline:none;
+    border:none;
+    background-color: transparent;
+    line-height: 25px;
+}
+
+#referral_box{
+    display: none;
+    width:434px;
+    border: 1px solid #d4d5d9;
+    border-top: none;
+}
+
+#referral_input_box{
+    width:394px;
+    margin-left: 20px;
+    margin-top: 20px;
+    outline:none;
+    border:none;
+    background-color: transparent;
+    line-height: 25px;
+}
+
+#referral_code_button{
+    margin-top: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #5d8ed5;
     cursor: pointer;
-}
-#backtohome:hover{
-    color: #fc8019;
-}
-form{
-    display: grid;
-    justify-content: center;
-    
-}
-#inputdata{
-    text-align: center;
-    margin: 20px;
-    margin: auto;
-}
-form input{
-    width: 400px;
-    height: 70px;
-    margin-bottom: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-#continue,#continue2{
-    width: 100%;
-    display: grid;
-    align-items: center;
-    text-align: center;
-    height: 50px;
-    font-size: larger;
-    color: white;
-    background-color: #fc8019;
+
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    text-align: left
 }
 
+#otp_box{
+    width:434px;
+    border: 1px solid #d4d5d9;
+    border-top: none;
+}
 
-#login{
+#otp_input_box{
+    width:394px;
+    margin-left: 20px;
+    margin-top: 20px;
+    outline:none;
+    border:none;
+    background-color: transparent;
+    line-height: 25px;
+}
+
+#verify_otp_button{
+    width:100%;
+    background-color: orange;
+    color:white;
+    border: 0px;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#upper_box{
+    display: flex;
+}
+
+#right_side{
+    text-align: right;
+}
+
+#right_side > img{
+    width:65%;
+}
+
+#x_mark{
+    width:20px;
+}
+
+#left_mark_box{
+    width:20px;
+}
+
+#sliding_box{
+    transition: 0.5s;
     background-color: white;
-    color: black;
-    border-color: white;
-    border-radius: 10px;
+    width:506px;
+    position:fixed;
+    right:-506px;
+    height:100vh;
+    top:0px;
 }
-#signup{
+
+#second_sliding_box{
+    transition: 0.5s;
+    background-color: white;
+    width:506px;
+    position:fixed;
+    right:-506px;
+    top:0px;
+}
+
+#otp_sliding_box{
+    background-color: white;
+    width:506px;
+    position:fixed;
+    right:-506px;
+    top:0px;
+}
+
+#complete_signup_otp_sliding_box{
+    background-color: white;
+    width:506px;
+    position:fixed;
+    right:-506px;
+    top:0px;
+}
+
+#black_film_box{
+    width:100%;
+    height:100vh;
     background-color: black;
-    color: white;
-    border-color: white;
-    border-radius: 10px;
-}
-
-
-
-#loginpage2{
-    width: 550px;
-    height: 700px;
-    /* border: 2px solid red; */
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: white;
-    
-    position:absolute;
-    transition: 2s;
+    opacity: 0.6;
+    position:fixed;
+    left: 0px;
     top:0px;
-    right:0px
-    
-    
-}
-#signnames2 p ,h1{
-    margin: 20px 70px;
-    
-}
-#show2{
-    width: 500px;
-    height: 600px;
-    /* border: 2px solid red; */
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    align-items: center;
-    position:absolute;
-    transition: 2s;
-    top:-700px;
-    right: 0px;
-    
-}
-#backtohome2{
-    margin-left: 30px;
-    color: brown;
-    margin-bottom: 50px;
-    margin-top: 40px;
-    cursor: pointer;
-}
-#backtohome2:hover{
-    color: #fc8019;
-}
-form{
-    display: grid;
-    justify-content: center;
-}
-#inputdata2{
-    text-align: center;
-    margin: auto;
-}
-form input{
-    width: 400px;
-    height: 70px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-form button{
-    width: 100%;
-    display: grid;
-    align-items: center;
-    margin: 20px 0px;
-}
-input{
-    width: 400px;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 20px;
-    border-radius: 2px;
-}
-#change{
-   
-    cursor: pointer;
-}
-a{
-    color: #fc8019;
+    display:none;
 }
