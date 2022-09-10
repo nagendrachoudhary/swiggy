@@ -511,10 +511,10 @@ var arr=[
      }
 
      var a=JSON.parse(localStorage.getItem("user"));
-    console.log(a);
+    
     if(a!==null)
     {
-     document.querySelector("#user").innerText=a.username;
+     document.querySelector("#user").innerText=a[0].username;
     }
     else{
       document.querySelector("#user").innerText="Sign In";
